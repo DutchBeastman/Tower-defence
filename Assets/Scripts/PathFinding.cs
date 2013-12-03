@@ -18,7 +18,7 @@ public class PathFinding : MonoBehaviour {
 	private bool MovingToD = false;
 	private bool MovingToE = false;
 	private bool MovingToF = false;
-	private bool direction;
+	//private bool direction;
 	void Start(){
 
 	}
@@ -35,7 +35,7 @@ public class PathFinding : MonoBehaviour {
 		if(transform.position == PointE.position){	MovingToE = false;	}
 		if(transform.position == PointE.position){	MovingToF = true;	}
 		if(transform.position == PointF.position){	MovingToF = false;	}
-		if(transform.position == PointF.position){	MovingToB = true;	}
+		if(transform.position == PointF.position){	startgame = true;	}
 
 		//move platform to point A or B
 		if(startgame){
