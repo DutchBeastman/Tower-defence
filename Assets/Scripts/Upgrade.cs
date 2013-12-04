@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Upgrade : MonoBehaviour {
 	//public
+<<<<<<< HEAD
 	public Rect windowRect = new Rect(20, 20, 120, 50);
 	public bool doWindow0 = false;
 	public bool doWindow1 = true;
@@ -12,6 +13,17 @@ public class Upgrade : MonoBehaviour {
 	void OnGUI() {
 		doWindow0 = GUI.Toggle(new Rect(10, 10, 800, 30), doWindow0, "Window 0");
 		doWindow1 = GUI.Toggle(new Rect(10, 40, 800, 20), doWindow1, "Window 1");
+=======
+	public Rect windowRect = new Rect(20, 20, 300, 50);
+	public bool doWindow0 = false;
+	public bool doWindow1 = false;
+	public Rect windowRect0 = new Rect(20, 20, 370, 80);
+	public Rect windowRect1 = new Rect(20, 100, 370, 80);
+	//Start making Buttons
+	void OnGUI() {
+		doWindow0 = GUI.Toggle(new Rect(10, 10, 200, 30), doWindow0, "Window 0");
+		doWindow1 = GUI.Toggle(new Rect(10, 40, 100, 20), doWindow1, "Window 1");
+>>>>>>> 11dd61fa198d75d8e95914c7297e74bbc7fb7ab9
 			if (doWindow0)
 			{
 				GUI.Window(0, new Rect(110, 10, 200, 60), DoWindow0, "Basic Window");
@@ -20,7 +32,7 @@ public class Upgrade : MonoBehaviour {
 
 			}
 			if (doWindow1){
-				GUI.Window(0, new Rect(110, 10, 200, 60), DoWindow1, "Basic Window");
+				GUI.Window(1, new Rect(110, 10, 200, 90), DoWindow1, "Basic Window");
 				GUI.color = Color.green;
 				windowRect1 = GUI.Window(1, windowRect1, DoMyWindow, "Green Window");
 			}
@@ -34,7 +46,7 @@ public class Upgrade : MonoBehaviour {
 
 
 	void DoMyWindow(int windowID) {
-		if (GUI.Button(new Rect(20, 25, 160, 23), "Tower upgrade 1")){
+		if (GUI.Button(new Rect(10, 20, 120, 23), "Tower upgrade 1")){
 
 			print("Shiny colors: " + GUI.color);
 		}
