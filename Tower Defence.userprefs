@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Upgrade.cs">
     <Files>
-      <File FileName="Assets\Scripts\Upgrade.cs" Line="17" Column="47" />
-      <File FileName="Assets\Scripts\PathFinding.cs" Line="40" Column="8" />
+      <File FileName="Assets\Scripts\Upgrade.cs" Line="23" Column="5" />
+      <File FileName="Assets\Scripts\PathFinding.cs" Line="18" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
