@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class CameraBehaviourScript : MonoBehaviour {
+	//public
+	public Transform target;
 	// Use this for initialization
 	void Start () {
 	
@@ -9,9 +11,15 @@ public class CameraBehaviourScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.A)
+		if (Input.GetButtonDown("Fire1")) {
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			if (Physics.Raycast(ray))
+			{
+
+			}
+		if(Input.GetKeyDown(KeyCode.A))
 		{
-			target Transform;
+			target.transform;
 			transform.LookAt(target);
 			transform.Translate(Vector3.right * Time.deltaTime);
 		}
