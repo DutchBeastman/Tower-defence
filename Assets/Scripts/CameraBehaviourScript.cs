@@ -11,15 +11,10 @@ public class CameraBehaviourScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Fire1")) {
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(ray))
-			{
 
-			}
 		if(Input.GetKeyDown(KeyCode.A))
 		{
-			target.transform;
+			target.GetComponent(target);
 			transform.LookAt(target);
 			transform.Translate(Vector3.right * Time.deltaTime);
 		}
