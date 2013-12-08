@@ -15,7 +15,16 @@ public class Upgrade : MonoBehaviour {
 	private float mousePosY = Input.mousePosition.y;
 
 	//Start making Buttons
+	void Start(){
+
+	}
 	void Update(){
+		if (Input.GetButtonDown("Fire1")) {
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			if (Physics.Raycast(ray))
+			{
+				
+			}
 		dir = new Vector3(mousePosX,mousePosY, 100);
 		if(Physics.Raycast(transform.position,dir,out hit,dist)){
 			if(hit.collider.name == "Building"){

@@ -14,7 +14,7 @@ public class CameraBehaviourScript : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.A))
 		{
-			target.GetComponent(target);
+			//target.GetComponent(target);
 			transform.LookAt(target);
 			transform.Translate(Vector3.right * Time.deltaTime);
 		}
