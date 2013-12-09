@@ -20,7 +20,7 @@ public class ShootingTower : MonoBehaviour {
 
 				tijd = 1;
 			}
-			newBullet.transform.Translate (-1, 0, 0);
+			//newBullet.transform.Translate (-1, 0, 0);
 		}
 	}
 	void OnTriggerEnter(Collider col)

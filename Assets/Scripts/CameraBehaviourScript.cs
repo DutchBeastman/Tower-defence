@@ -8,6 +8,12 @@ public class CameraBehaviourScript : MonoBehaviour {
 
 	void Update () {
 
+		if(Input.GetKeyDown(KeyCode.A))
+		{
+			//target.GetComponent(target);
+			//transform.LookAt(target);
+			//transform.Translate(Vector3.right * Time.deltaTime);
+		}
 	}
 
 }
