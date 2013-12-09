@@ -5,9 +5,7 @@ public class Upgrade : MonoBehaviour {
 	//privates
 
 
-	private RaycastHit hit;
-	private Vector3 dir;
-	private float dist = 0.6f;
+
 	private Rect windowRect = new Rect(20, 20, 300, 50);//300
 	private bool doWindow0 = false;
 	private bool doWindow1 = false;
@@ -20,7 +18,10 @@ public class Upgrade : MonoBehaviour {
 
 	}
 	void Update(){
-	
+		if (Input.GetButtonDown("Fire2")){
+			doWindow0 = false;
+			doWindow1 = false;
+		}
 	}
 
 
