@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class EnemyList : MonoBehaviour {
-	List Enemies;
+	//List Enemies;
 	// Use this for initialization
 	void Start () {
 	

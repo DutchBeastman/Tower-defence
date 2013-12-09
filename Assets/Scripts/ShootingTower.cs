@@ -12,6 +12,7 @@ public class ShootingTower : MonoBehaviour {
 	void Update(){
 		if(rotating == true)
 		{
+
 			tijd -= Time.deltaTime;
 			transform.LookAt(target.transform.position);
 			if(tijd <= 0)
@@ -20,7 +21,6 @@ public class ShootingTower : MonoBehaviour {
 
 				tijd = 1;
 			}
-			//newBullet.transform.Translate (-1, 0, 0);
 		}
 	}
 	void OnTriggerEnter(Collider col)
