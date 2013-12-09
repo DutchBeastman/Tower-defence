@@ -23,7 +23,7 @@ public class ShootingTower : MonoBehaviour {
 				newBullet.transform.Rotate(0, 0, 0);
 				//maakt het weird spawnen achter de building
 				//newBullet.transform.Translate(transform.position);
-
+				newBullet.rigidbody.AddRelativeForce(0, 10 ,10);
 				tijd = 1f;
 			}
 
