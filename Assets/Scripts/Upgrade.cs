@@ -4,7 +4,7 @@ using System.Collections;
 public class Upgrade : MonoBehaviour {
 	//privates
 
-	/*
+
 	private RaycastHit hit;
 	private Vector3 dir;
 	private float dist = 0.6f;
@@ -20,27 +20,9 @@ public class Upgrade : MonoBehaviour {
 
 	}
 	void Update(){
-
-		if (Input.GetButtonDown("Fire1")) {
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(ray))
-			{
-				
-			}
-		dir = new Vector3(mousePosX,mousePosY, 100);
-		if(Physics.Raycast(transform.position,dir,out hit,dist)){
-			if(hit.collider.name == "Building"){
-				//OnGUI();
-			}
-		}
-		//else{
-
-		//}
-	}
 	
-	void OnGUI() {
-
 	}
+
 
 	void OnMouseDown(){
 
@@ -73,5 +55,5 @@ public class Upgrade : MonoBehaviour {
 			print("Shiny colors: " + GUI.color);
 		}
 	}
-	}*/
-}
+	}
+
