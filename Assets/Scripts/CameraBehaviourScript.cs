@@ -9,11 +9,11 @@ public class CameraBehaviourScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.A)
+		if(Input.GetKeyDown(KeyCode.A))
 		{
-			target Transform;
-			transform.LookAt(target);
-			transform.Translate(Vector3.right * Time.deltaTime);
+			//target Transform;
+			//transform.LookAt(target);
+			//transform.Translate(Vector3.right * Time.deltaTime);
 		}
 	}
 
