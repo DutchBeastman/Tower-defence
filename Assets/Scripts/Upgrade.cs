@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Upgrade : MonoBehaviour {
 	//privates
+	/*
 	private RaycastHit hit;
 	private Vector3 dir;
 	private float dist = 0.6f;
@@ -28,14 +29,14 @@ public class Upgrade : MonoBehaviour {
 		dir = new Vector3(mousePosX,mousePosY, 100);
 		if(Physics.Raycast(transform.position,dir,out hit,dist)){
 			if(hit.collider.name == "Building"){
-				OnGUI();
+				//OnGUI();
 			}
 		}
-		else{
+		//else{
 
-		}
+		//}
 	}
-
+	
 	void OnGUI() {
 
 
@@ -62,4 +63,5 @@ public class Upgrade : MonoBehaviour {
 			print("Shiny colors: " + GUI.color);
 		}
 	}
+	}*/
 }
