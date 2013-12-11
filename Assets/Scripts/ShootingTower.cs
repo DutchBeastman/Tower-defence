@@ -27,11 +27,8 @@ public class ShootingTower : MonoBehaviour {
 				newBullet.rigidbody.AddRelativeForce(0, 10 ,10);
 				tijd = 1f;
 			}
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 5dad5e9d01d3a2ed6244af25f1c63e7992358dfe
 		}
 	}
 	void OnTriggerEnter(Collider col)

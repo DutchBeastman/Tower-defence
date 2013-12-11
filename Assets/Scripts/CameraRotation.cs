@@ -2,16 +2,25 @@
 using System.Collections;
 
 public class CameraRotation : MonoBehaviour {
-	public bool rotatingLeft = false;
-	public bool rotatingRight = false;
+	bool rotatingLeft = false;
+	bool rotatingRight = false;
+	bool zoomIn = false;
+	bool zoomOut = false;/*
+	Vector3 normalScale;
+	Vector3 biggerScale;
+	Vector3 SmallerScale;*/
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		/*normalScale = transform.position;
+		biggerScale = transform.position;
+		SmallerScale = transform.position;
+		biggerScale.z += 0.2f;
+		SmallerScale.z -= 0.2f;
+		*/
 		if(rotatingLeft){
 			transform.Rotate(0, 2, 0);
 		}
@@ -34,5 +43,6 @@ public class CameraRotation : MonoBehaviour {
 		{
 			rotatingRight = false;
 		}
+
 	}
 }
