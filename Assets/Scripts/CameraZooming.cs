@@ -16,17 +16,12 @@ public class CameraZooming : MonoBehaviour {
 		biggerCamPos = transform.position;
 
 		if(zoomIn){
-<<<<<<< HEAD
 			transform.position = smallerCamPos;
 		}
 		if(zoomOut){
 			transform.position = biggerCamPos;
-=======
+
 			//transform.position.z -= 0.2f;
-		}
-		if(zoomOut){
-			//transform.position.z += 0.2f;
->>>>>>> 841fbfe1e2b720d428ecc5776b3091c3c17cbbf2
 		}
 
 		if(Input.GetKeyDown(KeyCode.D))
