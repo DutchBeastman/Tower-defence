@@ -13,10 +13,10 @@ public class CameraZooming : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(zoomIn){
-			transform.position.z -= 0.2f;
+			//transform.position.z -= 0.2f;
 		}
 		if(zoomOut){
-			transform.position.z += 0.2f;
+			//transform.position.z += 0.2f;
 		}
 
 		if(Input.GetKeyDown(KeyCode.D))
