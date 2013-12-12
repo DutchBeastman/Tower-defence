@@ -2,21 +2,24 @@
 using System.Collections;
 
 public class CameraZooming : MonoBehaviour {
-	
+
 	bool zoomIn = false;
 	bool zoomOut = false;
-	// Use this for initialization
-	void Start () {
-	
+	Vector3 biggerCamPos;
+	Vector3 smallerCamPos;
+	void Start(){
+		biggerCamPos = new Vector3(transform.position.x,transform.position.y,transform.position.z+0.2f);
+		smallerCamPos = new Vector3(transform.position.x,transform.position.y,transform.position.z-0.2f);
 	}
-	
-	// Update is called once per frame
 	void Update () {
+
+		biggerCamPos = transform.position;
+
 		if(zoomIn){
-			transform.position.z -= 0.2f;
+			transform.position = smallerCamPos;
 		}
 		if(zoomOut){
-			transform.position.z += 0.2f;
+			transform.position = biggerCamPos;
 		}
 
 		if(Input.GetKeyDown(KeyCode.D))

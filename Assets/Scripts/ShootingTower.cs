@@ -9,7 +9,7 @@ public class ShootingTower : MonoBehaviour {
 	List<GameObject> enemiesInRange = new List<GameObject>(); 
 	private bool rotating = false;
 	void Start(){
-		tijd = 1f;
+		tijd = 0.1f;
 	}
 	void FixedUpdate(){
 		if(rotating == true)
@@ -21,17 +21,13 @@ public class ShootingTower : MonoBehaviour {
 			{
 				GameObject newBullet = Instantiate(Resources.Load("Prefabs/Rocket"), transform.position, Quaternion.identity) as GameObject;
 				newBullet.name = "Bullet";
-				newBullet.transform.Rotate(0, 0, 0);
-				//maakt het weird spawnen achter de building
-				//newBullet.transform.Translate(transform.position);
-				newBullet.rigidbody.AddRelativeForce(0, 10 ,10);
-				tijd = 1f;
+				float newXPos = (newBullet.transform.position.x-target.transform.position.x)*-1;
+				float newYPos = (newBullet.transform.position.y-target.transform.position.y)*-1;
+				float newZPos = (newBullet.transform.position.z-target.transform.position.z)*-1;
+				float bSp = 10;
+				newBullet.rigidbody.AddRelativeForce(newXPos*bSp, newYPos*bSp, newZPos*bSp);
+				tijd = 0.1f;
 			}
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 0f5515c677f0a1f5cadb803cd9817123e61ddeda
 		}
 	}
 	void OnTriggerEnter(Collider col)
@@ -44,9 +40,11 @@ public class ShootingTower : MonoBehaviour {
 	}
 	void OnTriggerExit(Collider col)
 	{
+		target = enemiesInRange[enemiesInRange.Clear()];
 		if(col.name == "Enemy")
 		{
 			rotating = false;
 		}
+
 	}
 }
