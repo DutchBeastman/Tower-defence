@@ -8,11 +8,10 @@ public class ShootingTower : MonoBehaviour {
 	public Transform muzzle;
 	private float tijd;
 	public List<GameObject> enemiesInRange = new List<GameObject>(); 
-	private int EnemieCounter;
 	private bool rotating = false;
 	void Start(){
 		tijd = 0.1f;
-		EnemieCounter = 0;
+
 	}
 	void FixedUpdate(){
 
@@ -33,10 +32,7 @@ public class ShootingTower : MonoBehaviour {
 				tijd = 0.1f;
 			
 
-				newBullet.transform.Rotate(0, 0, 0);
-				newBullet.transform.Translate(transform.position);
-				//newBullet.AddRelativeForce(PositionTarget);
-				tijd = 0.1f;
+			
 			}
 		}
 	}
@@ -45,7 +41,9 @@ public class ShootingTower : MonoBehaviour {
 	{
 		if(col.name == "Enemy"){
 			PositionTarget = new Vector3(target.transform.position.x * 100,0,target.transform.position.z * 100);
-		
+			target = enemiesInRange[0];
+			rotating = true;
+
 		}
 	}
 	void OnTriggerEnter(Collider col)
@@ -53,15 +51,15 @@ public class ShootingTower : MonoBehaviour {
 		if(col.name == "Enemy"){
 
 			rotating = true;
-			EnemieCounter -= 1;
 			enemiesInRange.Add(col.gameObject);
-			target = enemiesInRange[EnemieCounter];
+			target = enemiesInRange[0];
 		}
 	}
+
 	void OnTriggerExit(Collider col)
 	{
-		EnemieCounter += 1;
-		target = enemiesInRange[EnemieCounter];
+		rotating = false;
+		target = enemiesInRange[0];
 		if(col.name == "Enemy")
 		{
 			rotating = false;
