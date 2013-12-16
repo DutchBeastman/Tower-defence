@@ -20,11 +20,12 @@ public class BulletScript : MonoBehaviour {
 		rigidbody.AddRelativeForce(newXPos*bSp, newYPos*bSp, newZPos*bSp);
 	}
 	void OnTriggerEnter(Collider col) {
+		Destroy(gameObject);
 		if(col.gameObject.name == "Enemy")
 		{
-
 			Destroy(col.gameObject);
-			shootingtower.enemiesInRange.Remove(col.gameObject);
+
+			//shootingtower.enemiesInRange.Remove(col.gameObject);
 		}
 
 	}
