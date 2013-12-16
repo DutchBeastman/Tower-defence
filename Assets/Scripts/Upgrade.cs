@@ -9,6 +9,7 @@ public class Upgrade : MonoBehaviour {
 	//private Rect windowRect = new Rect(20, 20, 300, 50);//300
 	private bool doWindow0 = false;
 	private bool doWindow1 = false;
+	private int RI = 0;//Rotating It
 	private Rect windowRect0 ;
 	private Rect windowRect1 ;
 	private float posX = 0f;
@@ -44,21 +45,22 @@ public class Upgrade : MonoBehaviour {
 		if(gameObject.name == "side1")
 		{
 			posZ = posZ - offsetPos;
-			TurretRotation = 180;
+			RI = 2;//Rotating It
 		}
 		if(gameObject.name == "side2")
 		{
 			posZ = posZ + offsetPos;
+			RI = 0;//Rotating It
 		}
 		if(gameObject.name == "side3")
 		{
 			posX = posX - offsetPos;
-			TurretRotation = 90;
+			RI = 3;//Rotating It
 		}
 		if(gameObject.name == "side4")
 		{
 			posX = posX + offsetPos;
-			TurretRotation = -90;
+			RI = 1;//Rotating It
 		}
 
 	}
@@ -80,7 +82,8 @@ public class Upgrade : MonoBehaviour {
 			if(!Upgrade1){
 				GameObject newTurret = Instantiate(Resources.Load("Prefabs/Cannon"), PositionsOfTurrets, Quaternion.identity) as GameObject;
 				newTurret.name = "Turret";
-				newTurret.transform.Rotate(0,0,180);
+				int NRI = RI * 90;// New Rotating It // Rotating Int
+				newTurret.transform.Rotate(0,NRI,0);
 				UpgradeWindow = "Damage Upgrade";
 			}
 			if(Upgrade1)

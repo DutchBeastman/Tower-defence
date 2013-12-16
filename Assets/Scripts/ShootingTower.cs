@@ -3,16 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ShootingTower : MonoBehaviour {
+
 	private GameObject target;
 	private Vector3 PositionTarget;
+	private Vector3 RotatingToZero;
 	public Transform muzzle;
 	private float tijd;
 	public List<GameObject> enemiesInRange = new List<GameObject>(); 
 	private int EnemieCounter;
 	private bool rotating = false;
+
 	void Start(){
 		tijd = 0.1f;
 		EnemieCounter = 0;
+		RotatingToZero = new Vector3(0, 0, 0);
 	}
 	void FixedUpdate(){
 
@@ -25,33 +29,14 @@ public class ShootingTower : MonoBehaviour {
 			{
 				GameObject newBullet = Instantiate(Resources.Load("Prefabs/Rocket"), transform.position, Quaternion.identity) as GameObject;
 				newBullet.name = "Bullet";
-<<<<<<< HEAD
 				float newXPos = (newBullet.transform.position.x-target.transform.position.x) * -1;
 				float newYPos = (newBullet.transform.position.y-target.transform.position.y) * -1;
 				float newZPos = (newBullet.transform.position.z-target.transform.position.z) * -1;
 				float bSp = 10;
 				newBullet.rigidbody.AddRelativeForce(newXPos*bSp, newYPos*bSp, newZPos*bSp);
 				tijd = 0.1f;
-				///newBullet.transform.Rotate(0, 0, 0);
-				///newBullet.transform.Translate(transform.position);
-				///tijd = 0.1f;
-			}
 
-=======
-				float newXPos = (newBullet.transform.position.x-target.transform.position.x)*-1;
-				float newYPos = (newBullet.transform.position.y-target.transform.position.y)*-1;
-				float newZPos = (newBullet.transform.position.z-target.transform.position.z)*-1;
-				float bSp = 10;
-				newBullet.rigidbody.AddRelativeForce(newXPos*bSp, newYPos*bSp, newZPos*bSp);
-				tijd = 0.1f;
-			
-
-				newBullet.transform.Rotate(0, 0, 0);
-				newBullet.transform.Translate(transform.position);
-				//newBullet.AddRelativeForce(PositionTarget);
-				tijd = 0.1f;
 			}
->>>>>>> 88e19de64eb075475ef2930b7f0e0004aec01493
 		}
 	}
 
@@ -59,10 +44,6 @@ public class ShootingTower : MonoBehaviour {
 	{
 		if(col.name == "Enemy"){
 			PositionTarget = new Vector3(target.transform.position.x * 100,0,target.transform.position.z * 100);
-<<<<<<< HEAD
-=======
-		
->>>>>>> 88e19de64eb075475ef2930b7f0e0004aec01493
 		}
 	}
 	void OnTriggerEnter(Collider col)
@@ -72,22 +53,19 @@ public class ShootingTower : MonoBehaviour {
 			rotating = true;
 			EnemieCounter -= 1;
 			enemiesInRange.Add(col.gameObject);
-			target = enemiesInRange[EnemieCounter];
+			target = col.gameObject;
 		}
 	}
 	void OnTriggerExit(Collider col)
 	{
-<<<<<<< HEAD
-=======
 		EnemieCounter += 1;
-		target = enemiesInRange[EnemieCounter];
->>>>>>> 88e19de64eb075475ef2930b7f0e0004aec01493
 		if(col.name == "Enemy")
 		{
 			rotating = false;
+			transform.LookAt(RotatingToZero);
 			if(enemiesInRange.Contains(col.gameObject))
 			{
-			enemiesInRange.Remove(col.gameObject);
+				enemiesInRange.Remove(col.gameObject);
 			}
 		}
 

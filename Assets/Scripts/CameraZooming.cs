@@ -2,38 +2,29 @@
 using System.Collections;
 
 public class CameraZooming : MonoBehaviour {
-
 	bool zoomIn = false;
 	bool zoomOut = false;
-	Vector3 biggerCamPos;
-	Vector3 smallerCamPos;
-	void Start(){
-		biggerCamPos = new Vector3(transform.position.x,transform.position.y,transform.position.z+0.2f);
-		smallerCamPos = new Vector3(transform.position.x,transform.position.y,transform.position.z-0.2f);
-	}
+	
 	void Update () {
 
-		biggerCamPos = transform.position;
-
-		if(zoomIn){
-			transform.position = smallerCamPos;
+		///////Zooming In & Out
+		switch(zoomIn){
+		case true:
+			transform.Translate(0, 0, 2);
+			break;
 		}
-		if(zoomOut){
-			transform.position = biggerCamPos;
-<<<<<<< HEAD
-			//transform.position.z -= 0.2f;
-		}
-=======
-
-			//transform.position.z -= 0.2f;
+		switch(zoomOut){
+		case true:
+			transform.Translate(0, 0, -2);
+			break;
 		}
 
->>>>>>> 88e19de64eb075475ef2930b7f0e0004aec01493
-		if(Input.GetKeyDown(KeyCode.D))
+		/////////S & W
+		if(Input.GetKeyDown(KeyCode.W))
 		{
 			zoomIn = true;
 		}
-		if(Input.GetKeyUp(KeyCode.D))
+		if(Input.GetKeyUp(KeyCode.W))
 		{
 			zoomIn = false;
 		}
@@ -45,5 +36,7 @@ public class CameraZooming : MonoBehaviour {
 		{
 			zoomOut = false;
 		}
+		
+		
 	}
 }
