@@ -28,7 +28,7 @@ public class ShootingTower : MonoBehaviour {
 				float newXPos = (newBullet.transform.position.x-target.transform.position.x)*-1;
 				float newYPos = (newBullet.transform.position.y-target.transform.position.y)*-1;
 				float newZPos = (newBullet.transform.position.z-target.transform.position.z)*-1;
-				float bSp = 10;
+				float bSp = 100;
 				newBullet.rigidbody.AddRelativeForce(newXPos*bSp, newYPos*bSp, newZPos*bSp);
 				tijd = 0.1f;
 			

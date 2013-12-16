@@ -4,58 +4,36 @@ using System.Collections;
 
 public class PathFinding : MonoBehaviour {
 	//public
-	public Transform PointA;
-	public Transform PointB;
-	public Transform PointC;
-	public Transform PointD;
-	public Transform PointE;
-	public Transform PointF;
+	public Transform [] waypoints;
+	private int wayPointIndex;
 	public float Speed = 1;
+	public float rotationSpeed = 1;
+	private Vector3 targetDist;
+
+
 	//private
-	private bool startgame = true;
-	private bool MovingToB = false;
-	private bool MovingToC = false;
-	private bool MovingToD = false;
-	private bool MovingToE = false;
-	private bool MovingToF = false;
+
 	//private bool direction;
 	void Start(){
+		wayPointIndex = 0;
 
 	}
 	// switch direction
 	void FixedUpdate () {
-		if(transform.position == PointA.position){	startgame = false;	}
-		if(transform.position == PointA.position){	MovingToB = true;	}
-		if(transform.position == PointB.position){	MovingToB = false; 	}
-		if(transform.position == PointB.position){	MovingToC = true;	}
-		if(transform.position == PointC.position){	MovingToC = false;	}
-		if(transform.position == PointC.position){	MovingToD = true;	}
-		if(transform.position == PointD.position){	MovingToD = false;	}
-		if(transform.position == PointD.position){	MovingToE = true;	}
-		if(transform.position == PointE.position){	MovingToE = false;	}
-		if(transform.position == PointE.position){	MovingToF = true;	}
-		if(transform.position == PointF.position){	MovingToF = false;	}
-		if(transform.position == PointF.position){	startgame = true;	}
+		if(waypoints.Length > 0){
+			if(Vector3.Distance(transform.position, waypoints[wayPointIndex].position) < 1)
+			   {
+				wayPointIndex++;
+			}
+			if(wayPointIndex == waypoints.Length) {
+				wayPointIndex = 0;
 
-		//move platform to point A or B
-		if(startgame){
-			transform.position = Vector3.MoveTowards(transform.position, PointA.position, Speed);
+			}
+			targetDist = transform.LookAt(waypoints[wayPointIndex].position) - transform.position;
+			transform.rotation = Quaternion.Slerp(transform.Rotate, Quaternion.LookRotation(targetDist), rotationSpeed * Time.deltaTime);
+			transform.Translate(Vector3.forward * Speed * Time.deltaTime);
 		}
-		if(MovingToB){
-			transform.position = Vector3.MoveTowards(transform.position, PointB.position, Speed);
-		}
-		if(MovingToC){
-			transform.position = Vector3.MoveTowards(transform.position, PointC.position, Speed);
-		}
-		if(MovingToD){
-			transform.position = Vector3.MoveTowards(transform.position, PointD.position, Speed);
-		}
-		if(MovingToE){
-			transform.position = Vector3.MoveTowards(transform.position, PointE.position, Speed);
-		}
-		if(MovingToF){
-			transform.position = Vector3.MoveTowards(transform.position, PointF.position, Speed);
-		}
+		
 	}
 
 }
