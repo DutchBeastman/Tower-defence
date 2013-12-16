@@ -21,9 +21,6 @@ public class CameraZooming : MonoBehaviour {
 		if(zoomOut){
 			transform.position = biggerCamPos;
 
-			//transform.position.z -= 0.2f;
-		}
-
 		if(Input.GetKeyDown(KeyCode.D))
 		{
 			zoomIn = true;
@@ -40,5 +37,6 @@ public class CameraZooming : MonoBehaviour {
 		{
 			zoomOut = false;
 		}
+	}
 	}
 }
