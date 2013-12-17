@@ -23,7 +23,7 @@ public class BulletScript : MonoBehaviour {
 		Destroy(gameObject);
 		if(col.gameObject.name == "Enemy")
 		{
-			Destroy(col.gameObject);
+			gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
 
 			//shootingtower.enemiesInRange.Remove(col.gameObject);
 		}
