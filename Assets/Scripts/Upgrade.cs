@@ -55,12 +55,12 @@ public class Upgrade : MonoBehaviour {
 		if(gameObject.name == "side3")
 		{
 			posX = posX - offsetPos;
-			RI = 3;//Rotating It
+			RI = 1;//Rotating It
 		}
 		if(gameObject.name == "side4")
 		{
 			posX = posX + offsetPos;
-			RI = 1;//Rotating It
+			RI = 3;//Rotating It
 		}
 
 	}
