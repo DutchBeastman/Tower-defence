@@ -16,7 +16,7 @@ public class ShootingTower : MonoBehaviour {
 	void Start(){
 		tijd = 0.1f;
 		EnemieCounter = 0;
-		RotatingToZero = new Vector3(0, 0, 0);
+		RotatingToZero = new Vector3(90, 0, 0);
 
 	}
 	void FixedUpdate(){
