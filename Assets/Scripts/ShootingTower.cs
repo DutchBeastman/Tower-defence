@@ -80,4 +80,37 @@ public class ShootingTower : MonoBehaviour {
 		}
 
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	void Update(){
+		if(Input.GetKeyDown(KeyCode.N))
+		{
+			Application.LoadLevel("Dead");
+		}
+
+
+	}
 }
