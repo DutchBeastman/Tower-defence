@@ -46,7 +46,7 @@ public class ShootingTower : MonoBehaviour {
 	void OnTriggerStay(Collider col)
 	{
 		if(col.name == "Enemy"){
-			PositionTarget = new Vector3(target.transform.position.x * 100,0,target.transform.position.z * 100);
+			PositionTarget = new Vector3(target.transform.position.z * 100,0,target.transform.position.x * 100);
 			target = enemiesInRange[0];
 			rotating = true;
 

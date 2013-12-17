@@ -1,25 +1,21 @@
 fileFormatVersion: 2
-guid: d6d4b6bb380bb5b42b8c3a2ca020e643
+guid: bb2419c18ac1c704c9a90e2ae73ae465
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
     100000: Cylinder
-    100002: Cylinder.1
-    100004: Plane
-    100006: //RootNode
+    100002: Sphere
+    100004: //RootNode
     400000: Cylinder
-    400002: Cylinder.1
-    400004: Plane
-    400006: //RootNode
+    400002: Sphere
+    400004: //RootNode
     2300000: Cylinder
-    2300002: Cylinder.1
-    2300004: Plane
+    2300002: Sphere
     3300000: Cylinder
-    3300002: Cylinder.1
-    3300004: Plane
-    4300000: Cylinder
-    4300002: Plane
-    4300004: Cylinder.1
+    3300002: Sphere
+    4300000: Sphere
+    4300002: Cylinder
+    7400000: C4D Animation Take
     9500000: //RootNode
   materials:
     importMaterials: 1
