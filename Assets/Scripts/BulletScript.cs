@@ -4,11 +4,13 @@ using System.Collections;
 
 public class BulletScript : MonoBehaviour {
 	private ShootingTower shootingtower;
+	private GameObject enemyguy;
 
 	// Use this for initialization
 	void Start () {
 
 		ShootingTower shootingtower = (ShootingTower)this.GetComponent(typeof(ShootingTower));
+		enemyguy = GameObject.Find("Enemy");
 	
 	}
 	// Update is called once per frame
@@ -20,13 +22,20 @@ public class BulletScript : MonoBehaviour {
 		rigidbody.AddRelativeForce(newXPos*bSp, newYPos*bSp, newZPos*bSp);
 	}
 	void OnTriggerEnter(Collider col) {
-		Destroy(gameObject);
+
+
+	}
+	void OnCollisionEnter(Collision col){
+		Debug.Log(col.gameObject.name);
+
+		Destroy (gameObject);
 		if(col.gameObject.name == "Enemy")
 		{
-			gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
+			
 
+			enemyguy.GetComponent<EnemyHealth>().TakeDamage(3);
+			Destroy(gameObject, 3);
 			//shootingtower.enemiesInRange.Remove(col.gameObject);
 		}
-
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyHealth : MonoBehaviour {
 	public int healthCounter;
-	private int damage;
+	public int damage;
 	// Use this for initialization
 	void Start () {
 		healthCounter = 10;
