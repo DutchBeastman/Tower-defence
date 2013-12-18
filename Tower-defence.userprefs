@@ -1,16 +1,13 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DeadScripts\GoingToMenu.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraZooming.cs">
     <Files>
-      <File FileName="Assets\Scripts\DeadScripts\GoingToMenu.cs" Line="15" Column="1" />
-      <File FileName="Assets\Scripts\PathFinding.cs" Line="25" Column="1" />
+      <File FileName="Assets\Scripts\ShootingTower.cs" Line="83" Column="1" />
+      <File FileName="Assets\Scripts\DeadScripts\GoingToMenu.cs" Line="9" Column="4" />
+      <File FileName="Assets\Scripts\PathFinding.cs" Line="25" Column="37" />
+      <File FileName="Assets\Scripts\CameraZooming.cs" Line="41" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
->>>>>>> 28a07ec984b48696208d6d50ea88a0ba1bc1f00b
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
