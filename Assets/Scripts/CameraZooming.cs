@@ -38,7 +38,10 @@ public class CameraZooming : MonoBehaviour {
 			zoomOut = false;
 		}
 		
-		
+		if(Input.GetKeyDown(KeyCode.N))
+		{
+			Application.LoadLevel("Dead");
+		}
 	}
 }
 
