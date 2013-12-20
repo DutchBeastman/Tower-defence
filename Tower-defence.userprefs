@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShootingTower.cs">
+    <Files>
+      <File FileName="Tower-defence.sln" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ShootingTower.cs" Line="64" Column="19" />
+      <File FileName="Assets\Scripts\ShootingTower.cs" Line="64" Column="19" />
+      <File FileName="Assets\Scripts\DeadScripts\GoingToMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PathFinding.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraZooming.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
