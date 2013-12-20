@@ -1,13 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShootingTower.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BulletScript.cs">
     <Files>
-      <File FileName="Tower-defence.sln" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ShootingTower.cs" Line="64" Column="19" />
-      <File FileName="Assets\Scripts\ShootingTower.cs" Line="64" Column="19" />
-      <File FileName="Assets\Scripts\DeadScripts\GoingToMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PathFinding.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CameraZooming.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Upgrade.cs" Line="105" Column="1" />
+      <File FileName="Assets\Scripts\ShootingTower.cs" Line="36" Column="5" />
+      <File FileName="Assets\Scripts\BulletScript.cs" Line="31" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

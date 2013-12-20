@@ -12,7 +12,7 @@ public class ShootingTower : MonoBehaviour {
 	public float tijd;
 	public List<GameObject> enemiesInRange = new List<GameObject>(); 
 	private int EnemieCounter; 
-	public bool rotating = false;
+	private bool rotating = false;
 
 
 
@@ -33,7 +33,7 @@ public class ShootingTower : MonoBehaviour {
 			transform.LookAt(target.transform.position);
 			if(tijd <= 0)
 			{
-				Debug.Log("trace");
+
 
 				GameObject newBullet = Instantiate(Resources.Load("Prefabs/Rocket"),transform.position , Quaternion.identity) as GameObject;
 				newBullet.name = "Bullet";
