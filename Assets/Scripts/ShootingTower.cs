@@ -19,10 +19,7 @@ public class ShootingTower : MonoBehaviour {
 	void Start(){
 		tijd = 0.1f;
 		EnemieCounter = 0;
-		RotatingToZero = new Vector3(0, 0, 0);
-
-
-
+		RotatingToZero = new Vector3(0,transform.rotation.y,0);
 	}
 	void FixedUpdate(){
 
@@ -48,6 +45,7 @@ public class ShootingTower : MonoBehaviour {
 
 			}
 		}
+
 	}
 
 	void OnTriggerStay(Collider col)
@@ -78,14 +76,12 @@ public class ShootingTower : MonoBehaviour {
 	void OnTriggerExit(Collider col)
 	{
 
-
-
-		rotating = false;
-
 		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32")
 		{
+			//transform.rotation = Quaternion.LookRotation(RotatingToZero);
 			rotating = false;
-			transform.LookAt(RotatingToZero);
+
+			//transform.LookAt(RotatingToZero);
 			if(enemiesInRange.Contains(col.gameObject))
 			{
 				enemiesInRange.Remove(col.gameObject);
@@ -93,30 +89,6 @@ public class ShootingTower : MonoBehaviour {
 		}
 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	void Update(){
 		if(Input.GetKeyDown(KeyCode.N))
