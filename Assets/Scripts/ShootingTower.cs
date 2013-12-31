@@ -30,7 +30,7 @@ public class ShootingTower : MonoBehaviour {
 			transform.LookAt(target.transform.position);
 			if(tijd <= 0)
 			{
-				Debug.Log("trace");
+
 
 				GameObject newBullet = Instantiate(Resources.Load("Prefabs/Rocket"),transform.position , Quaternion.identity) as GameObject;
 				newBullet.name = "Bullet";
@@ -52,18 +52,16 @@ public class ShootingTower : MonoBehaviour {
 	{
 		rotating = false;
 		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32"){
-			PositionTarget = new Vector3(target.transform.position.z * 100,0,target.transform.position.x * 100);
-			target = enemiesInRange[0];
+			PositionTarget = new Vector3(target.transform.position.z ,0,target.transform.position.x );
+			//target = enemiesInRange[0];
 			rotating = true;
 
 		}
 	}
-	void OnCollisionEnter(Collision col){
-		Debug.Log("Swagg");
-	}
+
 	void OnTriggerEnter(Collider col)
 	{	
-		Debug.Log("hasjkl;sjf");
+
 		rotating = false;
 		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32"){
 

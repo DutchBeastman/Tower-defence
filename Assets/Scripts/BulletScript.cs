@@ -10,7 +10,6 @@ public class BulletScript : MonoBehaviour {
 	void Start () {
 
 		ShootingTower shootingtower = (ShootingTower)this.GetComponent(typeof(ShootingTower));
-		enemyguy = GameObject.Find("Enemy");
 	
 	}
 	// Update is called once per frame
@@ -27,12 +26,15 @@ public class BulletScript : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision col){
 		Debug.Log(col.gameObject.name);
+		if(col.gameObject.name == "Bullet")
+		{
 
+		}
 		Destroy (gameObject);
-		if(col.gameObject.name == "Enemy")
+		if(col.gameObject.name == "Enemy11" ||col.gameObject.name == "Enemy12" ||col.gameObject.name == "Enemy2" ||col.gameObject.name == "Enemy31" ||col.gameObject.name == "Enemy32")
 		{
 			
-
+			enemyguy = GameObject.Find(col.gameObject.name);
 			enemyguy.GetComponent<EnemyHealth>().TakeDamage(10);
 			Destroy(gameObject, 3);
 			//shootingtower.enemiesInRange.Remove(col.gameObject);
