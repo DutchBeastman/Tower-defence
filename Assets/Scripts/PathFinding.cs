@@ -26,13 +26,16 @@ public class PathFinding : MonoBehaviour {
 			   {
 				wayPointIndex++;
 			}
-			if(wayPointIndex == waypoints.Length) {
-				wayPointIndex = 0;
-
+				if(wayPointIndex == waypoints.Length) {
+					wayPointIndex = 0;
+				}
+			
+			if(waypoints[wayPointIndex])
+			{
+				Vector3 targetDist = waypoints[wayPointIndex].position - transform.position;
+				transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDist), rotationSpeed * Time.deltaTime);
+				transform.Translate(Vector3.forward * speed * Time.deltaTime);
 			}
-			Vector3 targetDist = waypoints[wayPointIndex].position - transform.position;
-			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDist), rotationSpeed * Time.deltaTime);
-			transform.Translate(Vector3.forward * speed * Time.deltaTime);
 		}
 		
 	}
