@@ -14,14 +14,12 @@ public class ShootingTower : MonoBehaviour {
 	public List<GameObject> enemiesInRange = new List<GameObject>(); 
 	private int EnemieCounter; 
 	public bool rotating = false;
-<<<<<<< HEAD
 	public bool RotatingToZeroBool = false;
 	private Upgrade SRI;
 	private int NRI;
-=======
 	private GameObject enemyguy;
 	private int towerDamage = 1;
->>>>>>> 0164d450e43eaad828ee3c4456ca776f5b3ff579
+
 
 
 
@@ -31,25 +29,21 @@ public class ShootingTower : MonoBehaviour {
 		tijd = 0.1f;
 		EnemieCounter = 0;
 		SRI = GetComponent<Upgrade>();
-		NRI = SRI.GetComponent<Upgrade>().RI;
+		//NRI = SRI.GetComponent<Upgrade>().RI;
 		//Debug.Log(SRI.RI);
 		RotatingToZeroPos = new Vector3(0, NRI * 90, 0);
 	}
 	void FixedUpdate(){
-<<<<<<< HEAD
+
 		if(RotatingToZeroBool == true)
 		{
-			transform.rotation = new Quaternion(0,NRI*90,0, 0);
+		//	transform.rotation = new Quaternion(0,NRI*90,0, 0);
 		}
-=======
-
-
->>>>>>> 0164d450e43eaad828ee3c4456ca776f5b3ff579
 		if(rotating == true)
 		{
 
 			tijd -= Time.deltaTime;
-			transform.LookAt(target.transform.position);
+
 			if(tijd <= 0)
 			{
 
@@ -74,9 +68,10 @@ public class ShootingTower : MonoBehaviour {
 	{
 
 		rotating = false;
-		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32"){
+		if(col.name == "Enemy"){
+			transform.LookAt(target.transform.position);
 			PositionTarget = new Vector3(target.transform.position.z ,0,target.transform.position.x );
-			target = enemiesInRange[EnemieCounter];
+			target = enemiesInRange[0];
 			rotating = true;
 			shooting = true;
 			enemyguy = target;
@@ -94,12 +89,9 @@ public class ShootingTower : MonoBehaviour {
 	void OnTriggerEnter(Collider col)
 	{	
 		rotating = false;
-		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32"){
-<<<<<<< HEAD
+		if(col.name == "Enemy"){
 			RotatingToZeroBool = false;
-=======
 			shooting = true;
->>>>>>> 0164d450e43eaad828ee3c4456ca776f5b3ff579
 			rotating = true;
 			enemiesInRange.Add(col.gameObject);
 			target =  enemiesInRange[0];
@@ -110,7 +102,7 @@ public class ShootingTower : MonoBehaviour {
 	void OnTriggerExit(Collider col)
 	{
 
-		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32")
+		if(col.name == "Enemy")
 		{
 			//transform.rotation = Quaternion.LookRotation(RotatingToZero);
 			shooting = false;
