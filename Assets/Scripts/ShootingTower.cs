@@ -12,7 +12,7 @@ public class ShootingTower : MonoBehaviour {
 	public Transform muzzle;
 	public float tijd;
 	public List<GameObject> enemiesInRange = new List<GameObject>(); 
-	private int EnemieCounter; 
+	private int EnemyCounter; 
 	public bool rotating = false;
 	public bool RotatingToZeroBool = false;
 	private Upgrade SRI;
@@ -26,13 +26,21 @@ public class ShootingTower : MonoBehaviour {
 	void Start(){
 
 		tijd = 0.1f;
-		EnemieCounter = 0;
+		EnemyCounter = 0;
 		SRI = GetComponent<Upgrade>();
-		NRI = SRI.GetComponent<Upgrade>().RI;
+		//NRI = SRI.GetComponent<Upgrade>().RI;
 		//Debug.Log(SRI.RI);
 		RotatingToZeroPos = new Vector3(0, NRI * 90, 0);
 	}
-	void FixedUpdate(){
+	void Update(){
+
+		if(!target){
+			if(enemiesInRange.Contains(target)){
+				enemiesInRange.Remove(target);
+			}
+			if(enemiesInRange.Count >= 1){
+				target = enemiesInRange[0];
+			}
 		if(RotatingToZeroBool == true)
 		{
 			transform.rotation = new Quaternion(0,NRI*90,0, 0);
@@ -41,7 +49,7 @@ public class ShootingTower : MonoBehaviour {
 		{
 
 			tijd -= Time.deltaTime;
-			transform.LookAt(target.transform.position);
+
 			if(tijd <= 0)
 			{
 
@@ -56,7 +64,7 @@ public class ShootingTower : MonoBehaviour {
 				newBullet.rigidbody.AddRelativeForce(newXPos*bSp, newYPos*bSp, newZPos*bSp);*/
 				tijd = 0.5f;
 
-
+				}
 			}
 		}
 
@@ -66,27 +74,35 @@ public class ShootingTower : MonoBehaviour {
 	{
 
 		rotating = false;
-		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32"){
-			PositionTarget = new Vector3(target.transform.position.z ,0,target.transform.position.x );
-			target = enemiesInRange[EnemieCounter];
+		if(col.name == "Enemy"){
+
+
+
 			rotating = true;
 			shooting = true;
-			enemyguy = target;
-			enemyguy.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
 
-		}
-		if(enemiesInRange.Contains(col.gameObject))
-		{
-			enemiesInRange.Remove(col.gameObject);
-			EnemieCounter -=1;
-			
+			if (target && (target.GetComponent<EnemyHealth>().healthCounter - towerDamage) <= 0)
+			{
+
+				enemiesInRange.Remove(target);
+
+			}
+			if(target)
+			{
+				transform.LookAt(target.transform.position);
+				target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
+			}
+			else
+			{
+				target = null;
+			}
 		}
 	}
 
 	void OnTriggerEnter(Collider col)
 	{	
 		rotating = false;
-		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32"){
+		if(col.name == "Enemy"){
 			RotatingToZeroBool = false;
 			shooting = true;
 			rotating = true;
@@ -99,7 +115,7 @@ public class ShootingTower : MonoBehaviour {
 	void OnTriggerExit(Collider col)
 	{
 
-		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32")
+		if(col.name == "Enemy")
 		{
 			//transform.rotation = Quaternion.LookRotation(RotatingToZero);
 			shooting = false;
@@ -109,18 +125,15 @@ public class ShootingTower : MonoBehaviour {
 			if(enemiesInRange.Contains(col.gameObject))
 			{
 				enemiesInRange.Remove(col.gameObject);
+
+				if(target == col.gameObject){
+					target = null;
+				}
 			
 			}
 		}
 
 	}
 
-	void Update(){
-		if(Input.GetKeyDown(KeyCode.N))
-		{
-			Application.LoadLevel("Dead");
-		}
 
-
-	}
 }

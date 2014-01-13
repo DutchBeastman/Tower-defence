@@ -1,11 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SpawningWaves.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Upgrade.cs">
     <Files>
-      <File FileName="..\Tower-defence - Copy\Assets\Scripts\SpawningWaves.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SpawningWaves.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Upgrade.cs" Line="87" Column="27" />
+      <File FileName="Assets\Scripts\AnimatioMovement.cs" Line="6" Column="18" />
       <File FileName="Assets\Scripts\ShootingTower.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PathFinding.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
