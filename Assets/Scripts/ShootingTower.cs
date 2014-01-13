@@ -17,7 +17,7 @@ public class ShootingTower : MonoBehaviour {
 	public bool RotatingToZeroBool = false;
 	private Upgrade SRI;
 	private int NRI;
-	private GameObject enemyguy;
+	private GameObject enemyguy = null;
 	private int towerDamage = 1;
 
 
@@ -108,6 +108,7 @@ public class ShootingTower : MonoBehaviour {
 			shooting = false;
 			rotating = false;
 			RotatingToZeroBool = true;
+			target = null;
 			//transform.LookAt(RotatingToZero);
 			if(enemiesInRange.Contains(col.gameObject))
 			{
