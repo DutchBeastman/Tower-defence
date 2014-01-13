@@ -4,32 +4,13 @@ using System.Collections;
 public class CameraRotation : MonoBehaviour {
 	bool rotatingLeft = false;
 	bool rotatingRight = false;
-	//bool zoomIn = false;
-	//bool zoomOut = false;
+	float speed;
+	float minMaxVar;
 
 	void Update () {
-		/////Rotating Left & Right
-		switch(rotatingLeft){
-			case true:
-				transform.Rotate(0, 2, 0);
-			break;
-		}
-		switch(rotatingRight){
-			case true:
-				transform.Rotate(0, -2, 0);
-			break;
-		}
-		///////Zooming In & Out
-		/*switch(zoomIn){
-			case true:
-				transform.Translate(0, 0, 2);
-			break;
-		}
-		switch(zoomOut){
-			case true:
-				transform.Translate(0, 0, -2);
-			break;
-		}*/
+		//minMaxVar = GetComponent<CameraZooming>().minMaxZoom;
+		speed = 4;
+
 		/////////A & D
 		if(Input.GetKeyDown(KeyCode.A))
 		{
@@ -47,24 +28,13 @@ public class CameraRotation : MonoBehaviour {
 		{
 			rotatingRight = false;
 		}
-		/////////S & W
-		/*if(Input.GetKeyDown(KeyCode.W))
-		{
-			zoomIn = true;
-		}
-		if(Input.GetKeyUp(KeyCode.W))
-		{
-			zoomIn = false;
-		}
-		if(Input.GetKeyDown(KeyCode.S))
-		{
-			zoomOut = true;
-		}
-		if(Input.GetKeyUp(KeyCode.S))
-		{
-			zoomOut = false;
-		}*/
 
-
+		/////Rotating Left & Right
+		if (rotatingLeft){
+			transform.Rotate(0, speed, 0);
+		}
+		if(rotatingRight){
+			transform.Rotate(0, -speed, 0);
+		}
 	}
 }

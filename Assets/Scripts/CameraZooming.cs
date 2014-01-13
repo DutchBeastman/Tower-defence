@@ -4,18 +4,27 @@ using System.Collections;
 public class CameraZooming : MonoBehaviour {
 	bool zoomIn = false;
 	bool zoomOut = false;
+	public float minMaxZoom = 1;
 	
 	void Update () {
 
 		///////Zooming In & Out
 		switch(zoomIn){
 			case true:
-				transform.Translate(0, 0, 2);
+			if(minMaxZoom >= 0)
+				{
+					transform.Translate(0, 0, 2);
+					minMaxZoom -= 0.1f;
+				}
 			break;
 		}
 		switch(zoomOut){
 			case true:
-				transform.Translate(0, 0, -2);
+				if(minMaxZoom <= 2)
+				{
+					transform.Translate(0, 0, -2);
+					minMaxZoom += 0.1f;
+				}
 			break;
 		}
 

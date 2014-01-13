@@ -1,11 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SpawningWaves.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShootingTower.cs">
     <Files>
       <File FileName="..\Tower-defence - Copy\Assets\Scripts\SpawningWaves.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\SpawningWaves.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ShootingTower.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ShootingTower.cs" Line="39" Column="10" />
       <File FileName="Assets\Scripts\PathFinding.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraZooming.cs" Line="57" Column="1" />
+      <File FileName="Assets\Scripts\CameraRotation.cs" Line="13" Column="1" />
+      <File FileName="Assets\Scripts\Upgrade.cs" Line="86" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
