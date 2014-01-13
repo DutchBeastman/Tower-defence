@@ -3,13 +3,20 @@ using System.Collections;
 
 public class Upgrade : MonoBehaviour {
 	//privates
-
+	public Texture upgradeTexture1;
+	public Texture upgradeTexture2;
+	public Texture upgradeTexture3;
 	private bool Upgrade1 = false;
 	private Vector3 guiPosition;
 	//private Rect windowRect = new Rect(20, 20, 300, 50);//300
 	private bool doWindow0 = false;
 	private bool doWindow1 = false;
+<<<<<<< HEAD
 	public int DI = 0;//direction Int
+=======
+	private bool doWindow2 = false;
+	public int RI = 0;//Rotating It
+>>>>>>> 702af3974ba751c96fca70690ea85ec56d6e385d
 	private Rect windowRect0 ;
 	private Rect windowRect1 ;
 	private float posX = 0f;
@@ -69,7 +76,7 @@ public class Upgrade : MonoBehaviour {
 		if(doWindow0){
 			GUI.Window(0, new Rect(guiPosition.x - 100,  Screen.height - -guiPosition.y - 150, 200, 60), DoWindow0, "Building Upgrade window");//200
 				GUI.color = Color.red;
-				windowRect0 = GUI.Window(0, windowRect0, DoWindow0, "Red Window");
+			windowRect0 = GUI.Window(0, windowRect0, DoWindow0, "Green Window");
 		}
 		if(doWindow1){	
 			GUI.Window(1, new Rect(guiPosition.x - 100,  Screen.height - -guiPosition.y - 150, 200, 90), DoWindow1, "Basic Window");
