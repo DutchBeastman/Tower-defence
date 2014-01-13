@@ -11,12 +11,9 @@ public class Upgrade : MonoBehaviour {
 	//private Rect windowRect = new Rect(20, 20, 300, 50);//300
 	private bool doWindow0 = false;
 	private bool doWindow1 = false;
-<<<<<<< HEAD
 	public int DI = 0;//direction Int
-=======
 	private bool doWindow2 = false;
 	public int RI = 0;//Rotating It
->>>>>>> 702af3974ba751c96fca70690ea85ec56d6e385d
 	private Rect windowRect0 ;
 	private Rect windowRect1 ;
 	private float posX = 0f;
