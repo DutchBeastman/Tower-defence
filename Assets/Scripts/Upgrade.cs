@@ -4,7 +4,11 @@ using System.Collections;
 public class Upgrade : MonoBehaviour {
 	//privates
 	private GameObject currency;
+<<<<<<< HEAD
 	private int totalCurrency;
+=======
+	//private int totalCurrency;
+>>>>>>> 402568e90102675915f2385d67a40078f5343dbb
 	public Texture upgradeTexture1;
 	public Texture upgradeTexture2;
 	public Texture upgradeTexture3;
@@ -34,6 +38,8 @@ public class Upgrade : MonoBehaviour {
 		PositionsOfTurrets = new Vector3(transform.position.x + posX,transform.position.y,transform.position.z + posZ);
 	}
 	void Update(){
+
+		//currency = GetComponent<Candy>().candy;
 		guiPosition = Camera.main.WorldToScreenPoint(transform.position);
 		windowRect0 = new Rect(guiPosition.x - 100,  Screen.height - guiPosition.y - 100, 200, 60);
 		windowRect1 = new Rect(guiPosition.x - 100,  Screen.height - guiPosition.y - 150, 200, 60);
@@ -91,6 +97,8 @@ public class Upgrade : MonoBehaviour {
 				int NDI = DI * 90;// New Rotating It // Rotating Int
 				newTurret.transform.Rotate(0,NDI,0);
 				UpgradeWindow = "Damage Upgrade";
+
+				Candy.candy -= 120;
 			}
 			if(Upgrade1)
 			{
