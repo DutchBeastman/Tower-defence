@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CandyCounter : MonoBehaviour {
+public class TurretScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

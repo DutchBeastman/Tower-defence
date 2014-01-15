@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 17bcd14753a8099409c624cb5227d189
+guid: 0a914b9702e66c74ab2e92a2cbb3c6c8
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
@@ -16,6 +16,7 @@ ModelImporter:
     100020: Null
     100022: Rhand
     100024: Root
+    100026: whole model
     400000: body
     400002: //RootNode
     400004: Joint.3
@@ -29,6 +30,7 @@ ModelImporter:
     400020: Null
     400022: Rhand
     400024: Root
+    400026: whole model
     4300000: body
     7400000: C4D Animation Take
     9500000: //RootNode
