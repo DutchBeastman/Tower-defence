@@ -32,7 +32,7 @@ public class ShootingTower : MonoBehaviour {
 				target = enemiesInRange[0];
 			}
 		}
-		if (tar) 
+		if (target) 
 		{
 			if(rotating == true)
 			{
@@ -46,27 +46,30 @@ public class ShootingTower : MonoBehaviour {
 		} 
 		else 
 		{
-			//transform.rotation = startRotation;
+			transform.rotation = startRotation;
 		}
-		if(Input.GetKeyDown(KeyCode.N))
-		{
-			Application.LoadLevel("Dead");
-		}
+	
 
 	}
-
+	
+	IEnumerator shoot()
+	{
+		yield return new WaitForSeconds(0.5f);
+		if(target){
+			target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
+		}
+	}
 	void OnTriggerStay(Collider col)
 	{
 
 		rotating = false;
 		if(col.name == "Enemy"){
 			//positionTarget = new Vector3(target.transform.position.z ,0,target.transform.position.x );
-			target = enemiesInRange[enemyCounter];
+			//target = enemiesInRange[enemyCounter];
 			rotating = true;
 			shooting = true;
 
 		}
-
 		if (target && (target.GetComponent<EnemyHealth>().healthCounter - towerDamage) <= 0)
 		{
 
@@ -76,7 +79,7 @@ public class ShootingTower : MonoBehaviour {
 		if(target)
 		{
 			transform.LookAt(target.transform.position);
-			target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
+
 		}
 		else
 		{
@@ -86,12 +89,14 @@ public class ShootingTower : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
 	{	
+
 		rotating = false;
 		if(col.name == "Enemy"){
 			shooting = true;
 			rotating = true;
 			enemiesInRange.Add(col.gameObject);
 			target =  enemiesInRange[0];
+			StartCoroutine(shoot());
 		}
 
 	}

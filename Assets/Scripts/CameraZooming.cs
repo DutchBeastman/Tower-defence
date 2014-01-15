@@ -5,7 +5,8 @@ public class CameraZooming : MonoBehaviour {
 	bool zoomIn = false;
 	bool zoomOut = false;
 	public float minMaxZoom = 1;
-	
+
+
 	void Update () {
 
 		///////Zooming In & Out
@@ -13,17 +14,17 @@ public class CameraZooming : MonoBehaviour {
 			case true:
 			if(minMaxZoom >= 0)
 				{
-					transform.Translate(0, 0, 2);
-					minMaxZoom -= 0.1f;
+					transform.Translate(0, 0, 1);
+					minMaxZoom -= 0.2f;
 				}
 			break;
 		}
 		switch(zoomOut){
 			case true:
-				if(minMaxZoom <= 2)
+				if(minMaxZoom <= 1)
 				{
-					transform.Translate(0, 0, -2);
-					minMaxZoom += 0.1f;
+					transform.Translate(0, 0, -1);
+					minMaxZoom += 0.2f;
 				}
 			break;
 		}
