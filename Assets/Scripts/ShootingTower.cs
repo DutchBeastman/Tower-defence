@@ -56,7 +56,8 @@ public class ShootingTower : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(0.5f);
 		if(target){
-		target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
+			target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
+			target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
 		}
 	}
 	void OnTriggerStay(Collider col)
@@ -79,8 +80,7 @@ public class ShootingTower : MonoBehaviour {
 		if(target)
 		{
 			transform.LookAt(target.transform.position);
-			StartCoroutine(shoot());
-		}
+			StartCoroutine(shoot());		}
 		else
 		{
 			target = null;
@@ -89,12 +89,14 @@ public class ShootingTower : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
 	{	
+
 		rotating = false;
 		if(col.name == "Enemy"){
 			shooting = true;
 			rotating = true;
 			enemiesInRange.Add(col.gameObject);
 			target =  enemiesInRange[0];
+			StartCoroutine(shoot());
 		}
 
 	}
