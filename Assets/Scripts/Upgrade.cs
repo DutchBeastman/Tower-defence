@@ -4,11 +4,6 @@ using System.Collections;
 public class Upgrade : MonoBehaviour {
 	//privates
 	private GameObject currency;
-<<<<<<< HEAD
-	private int totalCurrency;
-=======
-	//private int totalCurrency;
->>>>>>> 402568e90102675915f2385d67a40078f5343dbb
 	public Texture upgradeTexture1;
 	public Texture upgradeTexture2;
 	public Texture upgradeTexture3;
@@ -51,7 +46,6 @@ public class Upgrade : MonoBehaviour {
 
 
 	void OnMouseDown(){
-		currency = GetComponent<Candy>().candy;
 		doWindow0 = true;
 		//doWindow1 = true;
 		if(gameObject.name == "side1")

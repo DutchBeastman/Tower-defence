@@ -11,8 +11,8 @@ public class WaveSpawner : MonoBehaviour {
 	private float evolvingNumber;
 
 	void Start(){
-		numberOfEnemysPerWave = 100;
-		timeBetweenWaves = 5;
+		numberOfEnemysPerWave = 10;
+		timeBetweenWaves = 30;
 		waves = 0;
 	}
 
@@ -26,28 +26,48 @@ public class WaveSpawner : MonoBehaviour {
 		if(timeBetweenWaves <= 0)
 		{
 			startWaves();
-
+			if(waves == 30)
+			{
+				numberOfEnemysPerWave += 1;
+			}else if(waves == 40)
+			{
+				numberOfEnemysPerWave += 1;
+			}else if(waves == 55)
+			{
+				numberOfEnemysPerWave += 2;
+			}else if(waves == 75)
+			{
+				numberOfEnemysPerWave += 3;
+			}else if(waves == 100)
+			{
+				numberOfEnemysPerWave += 3;
+			}
 		}
 	}
 	///////starting a wave
 	void startWaves(){
 		waves ++;
-		Debug.Log(waves);
+		if(waves >= 5)
+		{
+			if(waves == 5)
+			{
+				evolvingNumber += 1;// balance for after 25 rounds getting heavyEnemy's
+			}
+			evolvingNumber += 0.2f;// 75 rounds to fully getting heavyEnemy's
+		}
 		setTimeBetweenSpawn();
 		StartCoroutine(spawnWave());
 	}
 	///////calling enemy spawn function
 	IEnumerator spawnWave ()
 	{
-		timeBetweenWaves = 35;
+		timeBetweenWaves = 30;
 		for(int i = 0; i < numberOfEnemysPerWave; i ++)
 		{
 			spawnEnemy();
-			print("Spawned an enemy.");
 			yield return new WaitForSeconds(timeBetweenSpawningEnemy);
 		}
-		yield return new WaitForSeconds(timeBetweenWaves);
-		print("All enemys are spawned.");
+//		yield return new WaitForSeconds(timeBetweenWaves);
 
 	}
 	void setTimeBetweenSpawn(){
@@ -60,78 +80,78 @@ public class WaveSpawner : MonoBehaviour {
 
 	void spawnEnemy(){
 		setTimeBetweenSpawn();
-		float enemyChooseInt = (Mathf.Ceil(Random.value * 5) + evolvingNumber);
-		if(enemyChooseInt <= 5)
+		float enemyChooseNumber = (Mathf.Ceil(Random.value * 5) + evolvingNumber);// random number between 0 and 5 + float that increases with every wave
+		if(enemyChooseNumber <= 5)
 		{
 			float sadGohstPicker = Mathf.Ceil(Random.value * 5);
 			if(sadGohstPicker == 1){
-				GameObject newEnemy11 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy11"),transform.position , Quaternion.identity) as GameObject;
+				GameObject newEnemy11 = Instantiate(Resources.Load("Prefabs/Enemies/NormalEnemy11"),transform.position , Quaternion.identity) as GameObject;
 				newEnemy11.transform.Rotate(0,90,0);
 				newEnemy11.name = "Enemy";
 			}else if(sadGohstPicker == 2){
-				GameObject newEnemy12 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy12"),transform.position , Quaternion.identity) as GameObject;
+				GameObject newEnemy12 = Instantiate(Resources.Load("Prefabs/Enemies/NormalEnemy12"),transform.position , Quaternion.identity) as GameObject;
 				newEnemy12.transform.Rotate(0,90,0);
 				newEnemy12.name = "Enemy";
 			}else if(sadGohstPicker == 3){
-				GameObject newEnemy2 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy2"),transform.position , Quaternion.identity) as GameObject;
+				GameObject newEnemy2 = Instantiate(Resources.Load("Prefabs/Enemies/NormalEnemy2"),transform.position , Quaternion.identity) as GameObject;
 				newEnemy2.transform.Rotate(0,90,0);
 				newEnemy2.name = "Enemy";
 			}else if(sadGohstPicker == 4){
-				GameObject newEnemy31 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy31"),transform.position , Quaternion.identity) as GameObject;
+				GameObject newEnemy31 = Instantiate(Resources.Load("Prefabs/Enemies/NormalEnemy31"),transform.position , Quaternion.identity) as GameObject;
 				newEnemy31.transform.Rotate(0,90,0);
 				newEnemy31.name = "Enemy";
 			}else if(sadGohstPicker == 5){
-				GameObject newEnemy32 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy32"),transform.position , Quaternion.identity) as GameObject;
+				GameObject newEnemy32 = Instantiate(Resources.Load("Prefabs/Enemies/NormalEnemy32"),transform.position , Quaternion.identity) as GameObject;
 				newEnemy32.transform.Rotate(0,90,0);
 				newEnemy32.name = "Enemy";
 			}
-		}else if(enemyChooseInt > 5 && enemyChooseInt < 10)
+		}else if(enemyChooseNumber > 5 && enemyChooseNumber < 10)
 		{
 			float naughtyGohstPicker = Mathf.Ceil(Random.value * 5);
 			if(naughtyGohstPicker == 1){
-				//GameObject newEnemy11 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy11"),transform.position , Quaternion.identity) as GameObject;
-				//newEnemy11.transform.Rotate(0,90,0);
-				//newEnemy11.name = "Enemy";
+				GameObject newEnemy11 = Instantiate(Resources.Load("Prefabs/Enemies/FastEnemy11"),transform.position , Quaternion.identity) as GameObject;
+				newEnemy11.transform.Rotate(0,90,0);
+				newEnemy11.name = "Enemy";
 			}else if(naughtyGohstPicker == 2){
-				//GameObject newEnemy12 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy12"),transform.position , Quaternion.identity) as GameObject;
-				//newEnemy12.transform.Rotate(0,90,0);
-				//newEnemy12.name = "Enemy";
+				GameObject newEnemy12 = Instantiate(Resources.Load("Prefabs/Enemies/FastEnemy12"),transform.position , Quaternion.identity) as GameObject;
+				newEnemy12.transform.Rotate(0,90,0);
+				newEnemy12.name = "Enemy";
 			}else if(naughtyGohstPicker == 3){
-				//GameObject newEnemy2 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy2"),transform.position , Quaternion.identity) as GameObject;
-				//newEnemy2.transform.Rotate(0,90,0);
-				//newEnemy2.name = "Enemy";
+				GameObject newEnemy2 = Instantiate(Resources.Load("Prefabs/Enemies/FastEnemy2"),transform.position , Quaternion.identity) as GameObject;
+				newEnemy2.transform.Rotate(0,90,0);
+				newEnemy2.name = "Enemy";
 			}else if(naughtyGohstPicker == 4){
-				//GameObject newEnemy31 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy31"),transform.position , Quaternion.identity) as GameObject;
-				//newEnemy31.transform.Rotate(0,90,0);
-				//newEnemy31.name = "Enemy";
+				GameObject newEnemy31 = Instantiate(Resources.Load("Prefabs/Enemies/FastEnemy31"),transform.position , Quaternion.identity) as GameObject;
+				newEnemy31.transform.Rotate(0,90,0);
+				newEnemy31.name = "Enemy";
 			}else if(naughtyGohstPicker == 5){
-				//GameObject newEnemy32 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy32"),transform.position , Quaternion.identity) as GameObject;
-				//newEnemy32.transform.Rotate(0,90,0);
-				//newEnemy32.name = "Enemy";
+				GameObject newEnemy32 = Instantiate(Resources.Load("Prefabs/Enemies/FastEnemy32"),transform.position , Quaternion.identity) as GameObject;
+				newEnemy32.transform.Rotate(0,90,0);
+				newEnemy32.name = "Enemy";
 			}
-		}else if(enemyChooseInt > 10 && enemyChooseInt <= 15)
+		}else if(enemyChooseNumber > 10 && enemyChooseNumber <= 15)
 		{
 			float wolfPicker = Mathf.Ceil(Random.value * 5);
 			if(wolfPicker == 1){
-				//GameObject newEnemy11 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy11"),transform.position , Quaternion.identity) as GameObject;
-				//newEnemy11.transform.Rotate(0,90,0);
-				//newEnemy11.name = "Enemy";
+				GameObject newEnemy11 = Instantiate(Resources.Load("Prefabs/Enemies/HeavyEnemy11"),transform.position , Quaternion.identity) as GameObject;
+				newEnemy11.transform.Rotate(0,90,0);
+				newEnemy11.name = "Enemy";
 			}else if(wolfPicker == 2){
-				//GameObject newEnemy12 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy12"),transform.position , Quaternion.identity) as GameObject;
-				//newEnemy12.transform.Rotate(0,90,0);
-				//newEnemy12.name = "Enemy";
+				GameObject newEnemy12 = Instantiate(Resources.Load("Prefabs/Enemies/HeavyEnemy12"),transform.position , Quaternion.identity) as GameObject;
+				newEnemy12.transform.Rotate(0,90,0);
+				newEnemy12.name = "Enemy";
 			}else if(wolfPicker == 3){
-				//GameObject newEnemy2 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy2"),transform.position , Quaternion.identity) as GameObject;
-				//newEnemy2.transform.Rotate(0,90,0);
-				//newEnemy2.name = "Enemy";
+				GameObject newEnemy2 = Instantiate(Resources.Load("Prefabs/Enemies/HeavyEnemy2"),transform.position , Quaternion.identity) as GameObject;
+				newEnemy2.transform.Rotate(0,90,0);
+				newEnemy2.name = "Enemy";
 			}else if(wolfPicker == 4){
-				//GameObject newEnemy31 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy31"),transform.position , Quaternion.identity) as GameObject;
-				//newEnemy31.transform.Rotate(0,90,0);
-				//newEnemy31.name = "Enemy";
+				GameObject newEnemy31 = Instantiate(Resources.Load("Prefabs/Enemies/HeavyEnemy31"),transform.position , Quaternion.identity) as GameObject;
+				newEnemy31.transform.Rotate(0,90,0);
+				newEnemy31.name = "Enemy";
 			}else if(wolfPicker == 5){
-				//GameObject newEnemy32 = Instantiate(Resources.Load("Prefabs/Enemies/Enemy32"),transform.position , Quaternion.identity) as GameObject;
-				//newEnemy32.transform.Rotate(0,90,0);
-				//newEnemy32.name = "Enemy";
+				GameObject newEnemy32 = Instantiate(Resources.Load("Prefabs/Enemies/HeavyEnemy32"),transform.position , Quaternion.identity) as GameObject;
+				newEnemy32.transform.Rotate(0,90,0);
+				newEnemy32.name = "Enemy";
 			}
 
 		}
