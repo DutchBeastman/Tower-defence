@@ -4,7 +4,9 @@ using System.Collections;
 public class Candy : MonoBehaviour {
 	public static int candy = 200;
 	public GUIText candyCounter;
-
+	public float nativeWidth = 1024.0f;
+	public float nativeHeight = 768.0f;
+	public GUIStyle stylos;
 	// Use this for initialization
 	public void Start () {
 		StartCoroutine(Timer());
@@ -17,8 +19,11 @@ public class Candy : MonoBehaviour {
 
 	}
 	void OnGUI() {
-		//candy = GUI.TextField(new Rect(10, 10, 200, 20),"Candy:" + candy, 25);
-		candyCounter.text = "Candy: " + candy;
+		float rx = Screen.width / nativeWidth;
+		float ry = Screen.height / nativeHeight;
+		GUI.matrix = Matrix4x4.TRS (new Vector3(0, 0, 0), Quaternion.identity, new Vector3 (rx, ry, 1));
+		GUI.Label(new Rect(530, 1000, 100, 20), "Candy: " + candy,stylos);
+		//candyCounter.text = "Candy: " + candy;
 
 
 

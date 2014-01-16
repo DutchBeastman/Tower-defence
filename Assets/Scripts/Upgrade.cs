@@ -5,6 +5,8 @@ public class Upgrade : MonoBehaviour {
 	//privates
 	private GameObject currency;
 	//private int totalCurrency;
+	public float nativeWidth = 1920.0f;
+	public float nativeHeight = 1080.0f;
 	public Texture upgradeTexture1;
 	public Texture upgradeTexture2;
 	public Texture upgradeTexture3;
@@ -24,7 +26,7 @@ public class Upgrade : MonoBehaviour {
 	private int offsetPos = 20;
 	private float TurretRotation;
 	private Vector3 PositionsOfTurrets;
-	private string UpgradeWindow = "Build Turret";
+	private string UpgradeWindow = "Build Turret -- 120 Candy";
 
 
 
@@ -86,21 +88,24 @@ public class Upgrade : MonoBehaviour {
 		}
 		}
 	void DoWindow0(int windowID) {
-		if (GUI.Button(new Rect(10, 20, 120, 23), UpgradeWindow)){
+		if (GUI.Button(new Rect(10, 20, 160, 23), UpgradeWindow)){
 			if(!Upgrade1){
+				if(Candy.candy >= 120)
+				{
 				GameObject newTurret = Instantiate(Resources.Load("Prefabs/Cannon"), PositionsOfTurrets, Quaternion.identity) as GameObject;
 				newTurret.name = "Turret";
 				int NDI = DI * 90;// New Rotating It // Rotating Int
 				newTurret.transform.Rotate(0,NDI,0);
 				UpgradeWindow = "Damage Upgrade";
-
 				Candy.candy -= 120;
+				Upgrade1 = true;
+				}
 			}
 			if(Upgrade1)
 			{
 				
 			}
-				Upgrade1 = true;
+				
 				doWindow0 = false;
 		}
 	}

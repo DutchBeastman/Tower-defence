@@ -14,7 +14,7 @@ public class Base : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision col)
 	{
-		if(col.gameObject.name == "Enemy11" ||col.gameObject.name == "Enemy12" ||col.gameObject.name == "Enemy2" ||col.gameObject.name == "Enemy31" ||col.gameObject.name == "Enemy32")
+		if(col.gameObject.name == "Enemy")
 		{
 
 		}
