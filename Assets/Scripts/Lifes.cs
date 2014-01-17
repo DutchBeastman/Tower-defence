@@ -2,13 +2,14 @@
 using System.Collections;
 
 public class Lifes : MonoBehaviour {
-	public static int lifes = 50;
+	public static int lifes;
 	public GUIText lifeCounter;
 	public float nativeWidth = 1024.0f;
 	public float nativeHeight = 768.0f;
 	public GUIStyle stylos;
 	// Update is called once per frame
 	void Start () {
+		lifes = 50;
 		StartCoroutine(UpdatingCounter());
 	}
 	void OnGUI() {
