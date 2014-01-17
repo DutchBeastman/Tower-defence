@@ -9,7 +9,7 @@ public class Candy : MonoBehaviour {
 	public GUIStyle stylos;
 	// Use this for initialization
 	public void Start () {
-		candy = 6000;
+		candy = 200;
 		StartCoroutine(Timer());
 	}
 	
