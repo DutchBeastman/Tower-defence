@@ -13,6 +13,8 @@ public class ShootingTower : MonoBehaviour {
 	private int enemyCounter; 
 	public bool rotating = false;
 	private int towerDamage = 1;
+
+	private bool isShooting = false;
 	//for cannon rotation after aiming
 	public bool tar;
 	private Quaternion startRotation;
@@ -34,6 +36,9 @@ public class ShootingTower : MonoBehaviour {
 		}
 		if (target) 
 		{
+			if(!isShooting){
+				StartCoroutine(shoot());
+			}
 			if(rotating == true)
 			{
 				tijd -= Time.deltaTime;
@@ -54,12 +59,13 @@ public class ShootingTower : MonoBehaviour {
 	
 	IEnumerator shoot()
 	{
+		isShooting = true;
 		yield return new WaitForSeconds(0.5f);
 		if(target){
 			target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
 		}
-		
-		StartCoroutine(shoot());		
+		Debug.Log("I'm Shooting");
+		isShooting = false;	
 	}
 	void OnTriggerStay(Collider col)
 	{
