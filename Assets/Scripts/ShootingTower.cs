@@ -57,7 +57,7 @@ public class ShootingTower : MonoBehaviour {
 		yield return new WaitForSeconds(0.5f);
 		if(target){
 			target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
-			target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
+
 		}
 	}
 	void OnTriggerStay(Collider col)

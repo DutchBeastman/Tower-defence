@@ -142,7 +142,7 @@ ModelImporter:
     400134: //RootNode
     400136: werewolf
     4300000: werewolf
-    7400000: C4D Animation Take
+    7400000: C4D Animation Take wolf
     9500000: //RootNode
     13700000: werewolf
   materials:
@@ -159,7 +159,171 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: C4D Animation Take wolf
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hips.Goal
+        weight: 1
+      - path: Hips.Goal/Tail.5.Goal
+        weight: 1
+      - path: Hips.Goal/Tail.5.Goal/Tail..4.Goal
+        weight: 1
+      - path: Hips.Goal/Tail.5.Goal/Tail..4.Goal/Tail.3.Goal
+        weight: 1
+      - path: Hips.Goal/Tail.5.Goal/Tail..4.Goal/Tail.3.Goal/Tail.2.Goal
+        weight: 1
+      - path: L_knee.Goal
+        weight: 1
+      - path: L_knee.Goal/L_ankle.Goal
+        weight: 1
+      - path: L_knee.Goal/L_ankle.Goal/L_foot.e.Goal
+        weight: 1
+      - path: R_knee.Goal
+        weight: 1
+      - path: R_knee.Goal/R_ankle.Goal
+        weight: 1
+      - path: R_knee.Goal/R_ankle.Goal/R_foot.e.Goal
+        weight: 1
+      - path: spline.2.Goal
+        weight: 1
+      - path: spline.2.Goal/L_wrist.Goal
+        weight: 1
+      - path: spline.2.Goal/R_wrist.Goal
+        weight: 1
+      - path: spline.2.Goal/spline.1.Goal
+        weight: 1
+      - path: werewolf
+        weight: 1
+      - path: werewolf/Null
+        weight: 1
+      - path: werewolf/Root
+        weight: 1
+      - path: werewolf/Root/spline.3
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/L_shoulder
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/L_shoulder/L_elbow
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/L_shoulder/L_elbow/L_wrist
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/L_shoulder/L_elbow/L_wrist/L_finger
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/L_shoulder/L_elbow/L_wrist/L_finger/L_finger.e
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/L_shoulder/L_elbow/L_wrist/L_finger.e.Goal
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/L_shoulder/L_elbow/L_wrist/L_Thumb.1
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/L_shoulder/L_elbow/L_wrist/L_Thumb.1/L_Thumb.2
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/L_shoulder/L_elbow/L_wrist/L_Thumb.1/L_Thumb.2/L_Tumb.e
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/L_shoulder/L_elbow/L_wrist/L_Tumb.e.Goal
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/R_shoulder
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/R_shoulder/R_elbow
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/R_shoulder/R_elbow/R_wrist
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/R_shoulder/R_elbow/R_wrist/R_finger
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/R_shoulder/R_elbow/R_wrist/R_finger/R_finger.e
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/R_shoulder/R_elbow/R_wrist/R_finger.e.Goal
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/R_shoulder/R_elbow/R_wrist/R_Thumb.1
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/R_shoulder/R_elbow/R_wrist/R_Thumb.1/R_Thumb.2
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/R_shoulder/R_elbow/R_wrist/R_Thumb.1/R_Thumb.2/R_Tumb.e
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/R_shoulder/R_elbow/R_wrist/R_Tumb.e.Goal
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/spline.1
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/spline.1/head
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/spline.1/head/jaw
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/spline.1/head/jaw/jaw.e
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/spline.1/head/jaw.e.Goal
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/spline.1/head/L_ear
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/spline.1/head/L_ear/L_ear.e
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/spline.1/head/L_ear.e.Goal
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/spline.1/head/R_ear
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/spline.1/head/R_ear/R_ear.e
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.2/spline.1/head/R_ear.e.Goal
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/L_hip
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/L_hip/L_knee
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/L_hip/L_knee/L_ankle
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/L_hip/L_knee/L_ankle/L_foot
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/L_hip/L_knee/L_ankle/L_foot/L_foot.e
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/R_hip
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/R_hip/R_knee
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/R_hip/R_knee/R_ankle
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/R_hip/R_knee/R_ankle/R_foot
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/R_hip/R_knee/R_ankle/R_foot/R_foot.e
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/Tail.1
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/Tail.1/Tail.2
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/Tail.1/Tail.2/Tail.3
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/Tail.1/Tail.2/Tail.3/Tail..4
+        weight: 1
+      - path: werewolf/Root/spline.3/spline.4/spline.5/Tail.1/Tail.2/Tail.3/Tail..4/Tail.5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
