@@ -58,6 +58,7 @@ public class ShootingTower : MonoBehaviour {
 		if(target){
 			target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
 			StartCoroutine(shoot());		
+
 		}
 		
 		StartCoroutine(shoot());		

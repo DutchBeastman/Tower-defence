@@ -49,7 +49,61 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: C4D Animation Take
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: whole model
+        weight: 1
+      - path: whole model/body
+        weight: 1
+      - path: whole model/body/Null
+        weight: 1
+      - path: whole model/body/Root
+        weight: 1
+      - path: whole model/body/Root/Joint.3
+        weight: 1
+      - path: whole model/body/Root/Joint.3/Joint.4
+        weight: 1
+      - path: whole model/body/Root/Joint.3/Joint.4/Joint.5
+        weight: 1
+      - path: whole model/body/Root/Joint.3/Joint.4/Joint.5/Joint.6
+        weight: 1
+      - path: whole model/body/Root/Joint.3/Joint.4/Joint.5/Joint.6/Joint.7
+        weight: 1
+      - path: whole model/body/Root/Joint.3/Lhand
+        weight: 1
+      - path: whole model/body/Root/Joint.3/Rhand
+        weight: 1
+      - path: whole model/Joint.7.Goal
+        weight: 1
+      - path: whole model/Joint.7.Goal/Joint.6.Goal
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
