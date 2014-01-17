@@ -2,13 +2,14 @@ using UnityEngine;
 using System.Collections;
 
 public class Candy : MonoBehaviour {
-	public static int candy = 200;
+	public static int candy;
 	public GUIText candyCounter;
 	public float nativeWidth = 1024.0f;
 	public float nativeHeight = 768.0f;
 	public GUIStyle stylos;
 	// Use this for initialization
 	public void Start () {
+		candy = 6000;
 		StartCoroutine(Timer());
 	}
 	
