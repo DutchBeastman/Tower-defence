@@ -2,16 +2,8 @@
 using System.Collections;
 
 public class StartButtonScript : MonoBehaviour {
-	void Update(){
-		if(Input.GetKeyDown(KeyCode.N))
-		{
-			Application.LoadLevel("LVL1");
-		}
-		
-		
-	}
+	public GameObject candySetter;
 	void OnMouseDown(){
 		Application.LoadLevel("LVL1");
-
 	}
 }

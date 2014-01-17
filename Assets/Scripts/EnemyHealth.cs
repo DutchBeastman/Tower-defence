@@ -6,7 +6,8 @@ public class EnemyHealth : MonoBehaviour {
 	public int damage;
 	public Animator animator;
 	public bool walk = true;
-
+	public GameObject lifeCounter;
+	private int hitBase = 1;
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
@@ -26,7 +27,13 @@ public class EnemyHealth : MonoBehaviour {
 			Candy.candy += 5;
 			Destroy(gameObject);
 		}
-
+	}
+	void OnTriggerEnter(Collider col){
+		if(col.name == "MainBase")
+		{
+			Destroy(gameObject);
+			lifeCounter.GetComponent<Lifes>().LifeTaken(hitBase);
+		}
 	}
 	public void TakeDamage(int damage)
 	{
