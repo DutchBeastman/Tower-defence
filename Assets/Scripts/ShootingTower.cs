@@ -12,21 +12,24 @@ public class ShootingTower : MonoBehaviour {
 	public List<GameObject> enemiesInRange = new List<GameObject>(); 
 	private int enemyCounter; 
 	public bool rotating = false;
-	private int towerDamage = 1;
+	private int towerDamage = 5;
 
 	private bool isShooting = false;
 	//for cannon rotation after aiming
 	public bool tar;
 	private Quaternion startRotation;
-
+	private Animator animator1;
 
 	void Start(){
 		tijd = 0.1f;
 		enemyCounter = 0;
 		startRotation = transform.rotation;
+		animator1 = GetComponent<Animator>();
+
 	}
 	void Update(){
 		if(!target){
+			animator1.SetBool("Shoot", false);
 			if(enemiesInRange.Contains(target)){
 				enemiesInRange.Remove(target);
 			}
@@ -36,8 +39,10 @@ public class ShootingTower : MonoBehaviour {
 		}
 		if (target) 
 		{
+			animator1.SetBool("Shoot", true);
 			if(!isShooting){
 				StartCoroutine(shoot());
+				isShooting = true;
 			}
 			if(rotating == true)
 			{
@@ -51,6 +56,7 @@ public class ShootingTower : MonoBehaviour {
 		} 
 		else 
 		{
+			animator1.SetBool("Shoot", false);
 			transform.rotation = startRotation;
 		}
 	
@@ -59,12 +65,18 @@ public class ShootingTower : MonoBehaviour {
 	
 	IEnumerator shoot()
 	{
-		isShooting = true;
+		//yield return new WaitForSeconds(0.2f);
+		animator1.SetBool("Shoot", false);
+
 		yield return new WaitForSeconds(0.5f);
+
 		if(target){
+			animator1.SetBool("Shoot", true);
 			target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
+			Debug.Log("I'm Shooting" + towerDamage);
+
 		}
-		Debug.Log("I'm Shooting");
+
 		isShooting = false;	
 	}
 	void OnTriggerStay(Collider col)

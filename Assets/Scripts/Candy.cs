@@ -23,7 +23,7 @@ public class Candy : MonoBehaviour {
 		float rx = Screen.width / nativeWidth;
 		float ry = Screen.height / nativeHeight;
 		GUI.matrix = Matrix4x4.TRS (new Vector3(0, 0, 0), Quaternion.identity, new Vector3 (rx, ry, 1));
-		GUI.Label(new Rect(530, 1000, 100, 20), "Candy: " + candy,stylos);
+		GUI.Label(new Rect(730, 990, 100, 20), "Candy: " + candy,stylos);
 		//candyCounter.text = "Candy: " + candy;
 
 

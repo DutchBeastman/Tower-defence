@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 3521f847fc4e8d44fab6da83bd424e63
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - animator1: {fileID: 9500000, guid: 40070a08629176246aa7e43c0eb58976, type: 3}
+  - animator2: {instanceID: 0}
+  - animator3: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
