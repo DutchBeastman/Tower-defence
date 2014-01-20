@@ -115,7 +115,10 @@ public class ShootingTower : MonoBehaviour {
 			rotating = true;
 			enemiesInRange.Add(col.gameObject);
 			target =  enemiesInRange[0];
-			StartCoroutine(shoot());
+			if(target)
+			{
+				StartCoroutine(shoot());
+			}
 		}
 
 	}
