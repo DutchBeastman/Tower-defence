@@ -1,30 +1,6 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\WaveSpawner.cs">
-    <Files>
-      <File FileName="Assets\Scripts\WaveSpawner.cs" Line="40" Column="12" />
-      <File FileName="Assets\Scripts\ShootingTower.cs" Line="75" Column="63" />
-      <File FileName="Assets\Scripts\Lifes.cs" Line="33" Column="1" />
-      <File FileName="Assets\Scripts\CameraRotation.cs" Line="41" Column="1" />
-      <File FileName="Assets\Scripts\CameraZooming.cs" Line="18" Column="24" />
-      <File FileName="Assets\Scripts\PathFinding.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyHealth.cs" Line="42" Column="16" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Upgrade.cs">
-    <Files>
-      <File FileName="Assets\Scripts\WaveSpawner.cs" Line="17" Column="8" />
-      <File FileName="Assets\Scripts\Lifes.cs" Line="19" Column="28" />
-      <File FileName="Assets\Scripts\ShootingTower.cs" Line="150" Column="1" />
-      <File FileName="Assets\Scripts\EnemyHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Candy.cs" Line="12" Column="16" />
-      <File FileName="Assets\Scripts\Shader.shader" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WaveSpawner.cs" Line="17" Column="8" />
-      <File FileName="Assets\Scripts\Upgrade.cs" Line="58" Column="4" />
->>>>>>> 7db2b5efab788f8d8450ee668cc576dc04f68f80
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
