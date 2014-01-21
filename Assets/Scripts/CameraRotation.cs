@@ -9,7 +9,7 @@ public class CameraRotation : MonoBehaviour {
 
 	void Update () {
 		//minMaxVar = GetComponent<CameraZooming>().minMaxZoom;
-		speed = 4;
+		speed = 3;
 
 		/////////A & D
 		if(Input.GetKeyDown(KeyCode.A))

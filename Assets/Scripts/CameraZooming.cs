@@ -15,7 +15,7 @@ public class CameraZooming : MonoBehaviour {
 			if(minMaxZoom >= 0)
 				{
 					transform.Translate(0, 0, 1);
-					minMaxZoom -= 0.2f;
+					minMaxZoom -= 0.15f;
 				}
 			break;
 		}
@@ -24,7 +24,7 @@ public class CameraZooming : MonoBehaviour {
 				if(minMaxZoom <= 1)
 				{
 					transform.Translate(0, 0, -1);
-					minMaxZoom += 0.2f;
+					minMaxZoom += 0.15f;
 				}
 			break;
 		}

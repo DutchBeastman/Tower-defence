@@ -14,8 +14,6 @@ public class EnemyHealth : MonoBehaviour {
 
 		if (animator) {
 			animator.SetBool("Walk", walk);
-
-			
 		}
 
 	}
@@ -38,5 +36,9 @@ public class EnemyHealth : MonoBehaviour {
 	public void TakeDamage(int damage)
 	{
 		healthCounter -= damage;
+	}
+	public void upLifes(int balance)
+	{
+		healthCounter += 1;
 	}
 }

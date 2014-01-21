@@ -73,7 +73,7 @@ public class ShootingTower : MonoBehaviour {
 		if(target){
 			animator1.SetBool("Shoot", true);
 			target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
-			Debug.Log("I'm Shooting" + towerDamage);
+			//Debug.Log("I'm Shooting a" + towerDamage);
 
 		}
 
