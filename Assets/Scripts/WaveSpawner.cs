@@ -21,18 +21,25 @@ public class WaveSpawner : MonoBehaviour {
 		timeBetweenWaves = 35;
 		waves = 0;
 		evolvingNumber = 5f;
+
 	}
 
 
 	void Update(){
 		if(Input.GetKeyDown(KeyCode.L))
 		{
-			startWaves();
+			timeBetweenWaves = 0;
+
 		}
 		timeBetweenWaves -= Time.deltaTime;
 		if(timeBetweenWaves <= 0)
 		{
 			startWaves();
+			WaveTekst.WaveName = "Wave: " + waves;
+			WaveTekst.check = true;
+		}
+		if(timeBetweenWaves <= 3){
+			WaveTekst.WaveName = "Next Wave";
 		}
 	}
 	///////starting a wave

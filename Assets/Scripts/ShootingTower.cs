@@ -29,6 +29,7 @@ public class ShootingTower : MonoBehaviour {
 
 	}
 	void Update(){
+
 		if(!target){
 			animator1.SetBool("Shoot", false);
 			if(enemiesInRange.Contains(target)){

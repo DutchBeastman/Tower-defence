@@ -23,12 +23,17 @@ public class SpawningWaves : MonoBehaviour {
 	void Update () {
 		timer -= Time.deltaTime;
 		SPET -= Time.deltaTime;
-		
+		if(timer <= 5){
+
+			WaveTekst.WaveName = "Next Wave Incoming";
+		}
 		if(timer <= 0)
 		{
 			//spawn = true;
 			waves ++;
 			timer += 45;
+			WaveTekst.WaveName = "Wave: " + waves;
+
 		}
 
 		switch(waves){
