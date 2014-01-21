@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour {
 	public Animator animator;
 	public bool walk = true;
 	public GameObject lifeCounter;
-	private int hitBase = 1;
+	public int hitBase = 1;
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();

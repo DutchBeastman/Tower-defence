@@ -16,7 +16,7 @@ public class Lifes : MonoBehaviour {
 		float rx = Screen.width / nativeWidth;
 		float ry = Screen.height / nativeHeight;
 		GUI.matrix = Matrix4x4.TRS (new Vector3(0, 0, 0), Quaternion.identity, new Vector3 (rx, ry, 1));
-		GUI.Label(new Rect(650, 10, 100, 20), "Lifes: " + lifes,stylos);
+		GUI.Label(new Rect(680, 10, 100, 20), "Lifes: " + lifes,stylos);
 		//candyCounter.text = "Candy: " + candy;
 	}
 	
