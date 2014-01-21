@@ -13,7 +13,7 @@ public class ShootingTower : MonoBehaviour {
 	private int enemyCounter; 
 	public bool rotating = false;
 	public static int towerDamage;
-
+	public int shootingDamage;
 	private bool isShooting = false;
 	//for cannon rotation after aiming
 	public bool tar;
@@ -21,7 +21,7 @@ public class ShootingTower : MonoBehaviour {
 	private Animator animator1;
 
 	void Start(){
-		towerDamage = 5;
+		towerDamage = 0 + shootingDamage;
 		tijd = 0.1f;
 		enemyCounter = 0;
 		startRotation = transform.rotation;
@@ -71,7 +71,7 @@ public class ShootingTower : MonoBehaviour {
 		animator1.SetBool("Shoot", false);
 
 		yield return new WaitForSeconds(0.5f);
-
+		Debug.Log("schiet nu");
 		if(target){
 			animator1.SetBool("Shoot", true);
 			target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
