@@ -12,7 +12,7 @@ public class ShootingTower : MonoBehaviour {
 	public List<GameObject> enemiesInRange = new List<GameObject>(); 
 	private int enemyCounter; 
 	public bool rotating = false;
-	private int towerDamage = 5;
+	public static int towerDamage;
 
 	private bool isShooting = false;
 	//for cannon rotation after aiming
@@ -21,6 +21,7 @@ public class ShootingTower : MonoBehaviour {
 	private Animator animator1;
 
 	void Start(){
+		towerDamage = 5;
 		tijd = 0.1f;
 		enemyCounter = 0;
 		startRotation = transform.rotation;
