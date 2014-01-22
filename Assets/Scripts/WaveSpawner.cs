@@ -23,14 +23,11 @@ public class WaveSpawner : MonoBehaviour {
 		evolvingNumber = 5f;
 
 	}
-
+	public void NextWave(){
+		timeBetweenWaves = 0;
+	}
 
 	void Update(){
-		if(Input.GetKeyDown(KeyCode.L))
-		{
-			timeBetweenWaves = 0;
-
-		}
 		timeBetweenWaves -= Time.deltaTime;
 		if(timeBetweenWaves <= 0)
 		{
@@ -81,7 +78,7 @@ public class WaveSpawner : MonoBehaviour {
 		float ry = Screen.height / nativeHeight;
 		GUI.matrix = Matrix4x4.TRS (new Vector3(0, 0, 0), Quaternion.identity, new Vector3 (rx, ry, 1));
 		NewWaveSpawnTimer = (int)timeBetweenWaves;
-		GUI.Label(new Rect(950, 10, 100, 20), "Time: " +  NewWaveSpawnTimer ,stylos);
+		GUI.Label(new Rect(600, 10, 100, 20), " Wave: " + waves + "          Time: " +  NewWaveSpawnTimer ,stylos);
 		//candyCounter.text = "Candy: " + candy;
 		}
 		
