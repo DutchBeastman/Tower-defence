@@ -9,21 +9,14 @@ public class WaveSpawner : MonoBehaviour {
 	public static float timeBetweenWaves;
 	public static int waves;
 	private float evolvingNumber;
-	private int NewWaveSpawnTimer;
-	public float nativeWidth = 1024.0f;
-	public float nativeHeight = 768.0f;
-	public GUIStyle stylos;
 	public bool onAndOff = false;
 	public bool spawningIsTrue = true;
-	public static bool yolo = false;	
-	public static bool yolo2 = false;
 
 	
 	void Start(){
 		numberOfEnemysPerWave = 10;
-		timeBetweenWaves = 3;
+		timeBetweenWaves = 35;
 		waves = 0;
-		yolo2 = true;
 		evolvingNumber = 5f;
 	}
 
@@ -38,9 +31,7 @@ public class WaveSpawner : MonoBehaviour {
 	}
 	///////starting a wave
 	void startWaves(){
-		waves += 1;
-		
-		Debug.Log(waves);
+		waves ++;
 		//increasing enemys per wave on long term
 		if(waves == 30){numberOfEnemysPerWave += 1;}
 		else if(waves == 40){numberOfEnemysPerWave += 1;}
@@ -63,9 +54,7 @@ public class WaveSpawner : MonoBehaviour {
 	///////calling enemy spawn function
 	IEnumerator spawnWave ()
 	{
-		
-		timeBetweenWaves = 35.5f;
-		yolo2 = true;
+		timeBetweenWaves = 35;
 		for(int i = 0; i < numberOfEnemysPerWave; i ++)
 		{
 			spawnEnemy();

@@ -28,6 +28,7 @@ public class ShootingTower : MonoBehaviour {
 		animator1 = GetComponent<Animator>();
 
 	}
+
 	void Update(){
 
 		if(!target){
@@ -44,6 +45,7 @@ public class ShootingTower : MonoBehaviour {
 			animator1.SetBool("Shoot", true);
 			if(!isShooting){
 				StartCoroutine(shoot());
+				Debug.Log("yolo");
 				isShooting = true;
 			}
 			if(rotating == true)
@@ -119,7 +121,7 @@ public class ShootingTower : MonoBehaviour {
 			target =  enemiesInRange[0];
 			if(target)
 			{
-				StartCoroutine(shoot());
+				///StartCoroutine(shoot());
 			}
 		}
 
