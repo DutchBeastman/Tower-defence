@@ -2,7 +2,8 @@ fileFormatVersion: 2
 guid: 5b0017fb81645b24d9f47773e72f6b5b
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - WaveSpawnerObject: {fileID: 100000, guid: 5788ce80ff48b164789bbdf64ad0c110, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

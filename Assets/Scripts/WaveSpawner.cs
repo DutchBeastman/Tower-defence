@@ -6,8 +6,8 @@ public class WaveSpawner : MonoBehaviour {
 	private float timeBetweenSpawningEnemy;
 	private float decreasedSpawnTime;
 	private int numberOfEnemysPerWave;
-	public float timeBetweenWaves;
-	private int waves;
+	public static float timeBetweenWaves;
+	public static int waves;
 	private float evolvingNumber;
 	private int NewWaveSpawnTimer;
 	public float nativeWidth = 1024.0f;
@@ -15,33 +15,32 @@ public class WaveSpawner : MonoBehaviour {
 	public GUIStyle stylos;
 	public bool onAndOff = false;
 	public bool spawningIsTrue = true;
+	public static bool yolo = false;	
+	public static bool yolo2 = false;
 
+	
 	void Start(){
 		numberOfEnemysPerWave = 10;
-		timeBetweenWaves = 35;
+		timeBetweenWaves = 3;
 		waves = 0;
+		yolo2 = true;
 		evolvingNumber = 5f;
-
-	}
-	public void NextWave(){
-		timeBetweenWaves = 0;
 	}
 
+	
 	void Update(){
+
 		timeBetweenWaves -= Time.deltaTime;
 		if(timeBetweenWaves <= 0)
 		{
 			startWaves();
-			WaveTekst.WaveName = "Wave: " + waves;
-			WaveTekst.check = true;
-		}
-		if(timeBetweenWaves <= 3){
-			WaveTekst.WaveName = "Next Wave";
 		}
 	}
 	///////starting a wave
 	void startWaves(){
-		waves ++;
+		waves += 1;
+		
+		Debug.Log(waves);
 		//increasing enemys per wave on long term
 		if(waves == 30){numberOfEnemysPerWave += 1;}
 		else if(waves == 40){numberOfEnemysPerWave += 1;}
@@ -59,31 +58,24 @@ public class WaveSpawner : MonoBehaviour {
 		}
 		setTimeBetweenSpawn();
 		StartCoroutine(spawnWave());
+
 	}
 	///////calling enemy spawn function
 	IEnumerator spawnWave ()
 	{
-		timeBetweenWaves = 36;
+		
+		timeBetweenWaves = 35.5f;
+		yolo2 = true;
 		for(int i = 0; i < numberOfEnemysPerWave; i ++)
 		{
 			spawnEnemy();
 			yield return new WaitForSeconds(timeBetweenSpawningEnemy);
 		}
-//		yield return new WaitForSeconds(timeBetweenWaves);
 
-	}
-	void OnGUI() {
-		if(onAndOff){
-		float rx = Screen.width / nativeWidth;
-		float ry = Screen.height / nativeHeight;
-		GUI.matrix = Matrix4x4.TRS (new Vector3(0, 0, 0), Quaternion.identity, new Vector3 (rx, ry, 1));
-		NewWaveSpawnTimer = (int)timeBetweenWaves;
-		GUI.Label(new Rect(600, 10, 100, 20), " Wave: " + waves + "          Time: " +  NewWaveSpawnTimer ,stylos);
-		//candyCounter.text = "Candy: " + candy;
-		}
-		
+		//		yield return new WaitForSeconds(timeBetweenWaves);
 		
 	}
+
 	void setTimeBetweenSpawn(){
 		if(waves >= 20)
 		{
@@ -91,7 +83,7 @@ public class WaveSpawner : MonoBehaviour {
 		}
 		timeBetweenSpawningEnemy = 1.2f - decreasedSpawnTime;
 	}
-
+	
 	void spawnEnemy(){
 		if(spawningIsTrue){
 			setTimeBetweenSpawn();
@@ -122,7 +114,7 @@ public class WaveSpawner : MonoBehaviour {
 				}
 			}else if(enemyChooseNumber > 5 && enemyChooseNumber < 10)
 			{
-
+				
 				float sadGohstPicker = Mathf.Ceil(Random.value * 5);
 				if(sadGohstPicker == 1){
 					GameObject newEnemy11 = Instantiate(Resources.Load("Prefabs/Enemies/FastEnemy11"),transform.position , Quaternion.identity) as GameObject;
@@ -169,7 +161,7 @@ public class WaveSpawner : MonoBehaviour {
 					newEnemy32.transform.Rotate(0,90,0);
 					newEnemy32.name = "Enemy";
 				}
-
+				
 			}else if(enemyChooseNumber > 15 && enemyChooseNumber < 20)
 			{
 				float redWolfPicker = Mathf.Ceil(Random.value * 5);
@@ -221,8 +213,8 @@ public class WaveSpawner : MonoBehaviour {
 				}
 				
 			}
-
+			
 		}
-
+		
 	}
 }
