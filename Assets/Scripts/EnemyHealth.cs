@@ -24,6 +24,7 @@ public class EnemyHealth : MonoBehaviour {
 
 			Candy.candy += 5;
 			Destroy(gameObject);
+			GameObject CandyParticle = Instantiate(Resources.Load("Prefabs/EnemyDeath"),transform.position,Quaternion.identity) as GameObject;
 		}
 	}
 	void OnTriggerEnter(Collider col){
