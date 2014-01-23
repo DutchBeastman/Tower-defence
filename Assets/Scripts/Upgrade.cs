@@ -31,13 +31,14 @@ public class Upgrade : MonoBehaviour {
 	private string UpgradeWindow1 = "Build Turret -- 120 Candy";
 	private string UpgradeWindow2 = "Build Big Turret -- 260 Candy";
 	private string UpgradeWindow3 = "Build Tripple Turret -- 380 Candy";
-	private string sellWindow1 = "Sell Your Turret -- 60 Candy";
-	private string sellWindow2 = "Sell Your Turret -- 130 Candy";
-	private string sellWindow3 = "Sell Your Turret -- 190 Candy";
-	public int damageUpgradeVariable = 100;
+	private int damageUpgradeVariable = 100;
+	private int speedUpgradeVariable = 80;
 	private bool clicked = false;
 	private Color defaultColor;
 	private Color mouseOverColor;
+	private int damageUpgradeCost = 100;
+	private int speedUpgradeCost = 80;
+	public int turretSelect;
 
 
 	//Start making Buttons
@@ -123,6 +124,7 @@ public class Upgrade : MonoBehaviour {
 					Candy.candy -= 120;
 					Upgrade1 = true;
 					doWindow0 = false;
+					turretSelect = 0;
 				}
 			
 			}
@@ -141,6 +143,7 @@ public class Upgrade : MonoBehaviour {
 					Candy.candy -= 260;
 					Upgrade1 = true;
 					doWindow0 = false;
+					turretSelect = 1;
 				}
 			}
 		}
@@ -158,17 +161,48 @@ public class Upgrade : MonoBehaviour {
 					Candy.candy -= 380;
 					Upgrade1 = true;
 					doWindow0 = false;
+					turretSelect = 2;
 				}
 			}
 		}
 		if(Upgrade1){
-			windowRect0 = new Rect(guiPosition.x - 100,  Screen.height - guiPosition.y - 100, 230, 50);
-			if (GUI.Button(new Rect(10, 20, 210, 23), "Damage Upgrade -- 100")){
+			windowRect0 = new Rect(guiPosition.x - 100,  Screen.height - guiPosition.y - 100, 230,250);
+			if (GUI.Button(new Rect(10, 20, 210, 23), "Damage Upgrade --" + damageUpgradeCost)){
 				if(Candy.candy >= damageUpgradeVariable){
+					Candy.candy -= damageUpgradeCost;
 					ShootingTower.towerDamage += 1;
+					damageUpgradeCost += 10;
 
 				}
 		}
+			if (GUI.Button(new Rect(10, 60, 210, 23), "Speed --" + speedUpgradeCost)){
+				if(Candy.candy >= speedUpgradeVariable){
+					Candy.candy -= speedUpgradeCost;
+					ShootingTower.shootingSpeed -= 0.05f;
+					speedUpgradeCost += 10;
+					
+				}
+			}
+			if (GUI.Button(new Rect(10, 100, 210, 23), "Sell")){
+				if(Candy.candy >= speedUpgradeVariable){
+					Upgrade1 = false;
+					ShootingTower.removeTurret = true;
+					if(turretSelect == 0)
+					{
+						Candy.candy += 60;
+					}
+					if(turretSelect == 1)
+					{
+						Candy.candy += 130;
+					}
+					if(turretSelect == 2)
+					{
+						Candy.candy += 190;
+					}
+					
+				}
+			}
+
 		}
 	//doWindow0 = false;
 	}	

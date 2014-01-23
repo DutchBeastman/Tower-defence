@@ -13,12 +13,16 @@ public class ShootingTower : MonoBehaviour {
 	private int enemyCounter; 
 	public bool rotating = false;
 	public static int towerDamage;
+	public static float shootingSpeed = 2.5f;
 	public int shootingDamage;
 	private bool isShooting = false;
 	//for cannon rotation after aiming
 	public bool tar;
 	private Quaternion startRotation;
 	private Animator animator1;
+	public static bool removeTurret = false;
+
+
 
 	void Start(){
 		towerDamage = 0 + shootingDamage;
@@ -30,7 +34,10 @@ public class ShootingTower : MonoBehaviour {
 	}
 
 	void Update(){
-
+		if(removeTurret){
+			Destroy(gameObject);
+			removeTurret = false;
+		}
 		if(!target){
 			animator1.SetBool("Shoot", false);
 			if(enemiesInRange.Contains(target)){
@@ -72,7 +79,7 @@ public class ShootingTower : MonoBehaviour {
 		//yield return new WaitForSeconds(0.2f);
 		animator1.SetBool("Shoot", false);
 
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(shootingSpeed);
 		Debug.Log("schiet nu");
 		if(target){
 			animator1.SetBool("Shoot", true);
