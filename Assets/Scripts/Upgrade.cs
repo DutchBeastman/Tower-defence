@@ -31,6 +31,9 @@ public class Upgrade : MonoBehaviour {
 	private string UpgradeWindow1 = "Build Turret -- 120 Candy";
 	private string UpgradeWindow2 = "Build Big Turret -- 260 Candy";
 	private string UpgradeWindow3 = "Build Tripple Turret -- 380 Candy";
+	private string sellWindow1 = "Sell Your Turret -- 60 Candy";
+	private string sellWindow2 = "Sell Your Turret -- 130 Candy";
+	private string sellWindow3 = "Sell Your Turret -- 190 Candy";
 	public int damageUpgradeVariable = 100;
 	private bool clicked = false;
 	private Color defaultColor;
