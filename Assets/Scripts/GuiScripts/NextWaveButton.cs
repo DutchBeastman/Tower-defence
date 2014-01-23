@@ -7,7 +7,6 @@ public class NextWaveButton : MonoBehaviour {
 	public float nativeWidth = 1024.0f;
 	public float nativeHeight = 768.0f;
 	public GUIStyle stylos;
-	public static bool yolo;
 
 	IEnumerator OnMouseDown(){
 		WaveSpawner.timeBetweenWaves = 0;
