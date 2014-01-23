@@ -1,15 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShootingTower.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Upgrade.cs">
     <Files>
-      <File FileName="Assets\Scripts\ShootingTower.cs" Line="124" Column="8" />
-      <File FileName="Assets\Scripts\WaveSpawner.cs" Line="22" Column="1" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyHealth.cs">
-    <Files>
-      <File FileName="Assets\Scripts\EnemyHealth.cs" Line="27" Column="31" />
->>>>>>> 6b3dacdc25bc6087267659a1afe6c9d6c8959f73
+      <File FileName="Assets\Scripts\ShootingTower.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\WaveSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Upgrade.cs" Line="164" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
