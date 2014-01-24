@@ -27,12 +27,12 @@ public class WaveSpawner : MonoBehaviour {
 		if(timeBetweenWaves <= 0)
 		{
 			startWaves();
-			WaveTekst.WaveName = "Wave: " + waves;
+			WaveTekst.WaveName = "   Wave: " + waves;
 			WaveTekst.check = true;
 		}
 		if(timeBetweenWaves <= 5)
 		{
-			WaveTekst.WaveName = "Next Round";
+			WaveTekst.WaveName = "  Next Round";
 		}
 	}
 	///////starting a wave
