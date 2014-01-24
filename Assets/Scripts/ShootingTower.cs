@@ -13,7 +13,7 @@ public class ShootingTower : MonoBehaviour {
 	private int enemyCounter; 
 	public bool rotating = false;
 	public static int towerDamage;
-	public static float shootingSpeed = 2.5f;
+	public static float shootingSpeed = 1.05f;
 	public int shootingDamage;
 	private bool isShooting = false;
 	//for cannon rotation after aiming
@@ -76,10 +76,11 @@ public class ShootingTower : MonoBehaviour {
 	
 	IEnumerator shoot()
 	{
-		//yield return new WaitForSeconds(0.2f);
-		animator1.SetBool("Shoot", false);
+
+
 
 		yield return new WaitForSeconds(shootingSpeed);
+		animator1.SetBool("Shoot", false);
 		Debug.Log("schiet nu");
 		if(target){
 			animator1.SetBool("Shoot", true);
