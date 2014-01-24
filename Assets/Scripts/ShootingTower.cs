@@ -13,7 +13,8 @@ public class ShootingTower : MonoBehaviour {
 	private int enemyCounter; 
 	public bool rotating = false;
 	public static int towerDamage;
-	public static float shootingSpeed = 1.05f;
+	public float easyChangeShootingSpeed;
+	public static float shootingSpeed = 1;
 	public int shootingDamage;
 	private bool isShooting = false;
 	//for cannon rotation after aiming
@@ -25,6 +26,7 @@ public class ShootingTower : MonoBehaviour {
 
 
 	void Start(){
+		shootingSpeed -= easyChangeShootingSpeed;
 		towerDamage = 0 + shootingDamage;
 		tijd = 0.1f;
 		enemyCounter = 0;

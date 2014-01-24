@@ -9,7 +9,7 @@ public class Candy : MonoBehaviour {
 	public GUIStyle stylos;
 	// Use this for initialization
 	public void Start () {
-		candy = 240;
+		candy = 450;
 		StartCoroutine(Timer());
 	}
 	
@@ -24,16 +24,12 @@ public class Candy : MonoBehaviour {
 		float ry = Screen.height / nativeHeight;
 		GUI.matrix = Matrix4x4.TRS (new Vector3(0, 0, 0), Quaternion.identity, new Vector3 (rx, ry, 1));
 		GUI.Label(new Rect(650, 990, 100, 20), "Candy: " + candy,stylos);
-		//candyCounter.text = "Candy: " + candy;
-
-
-
 	}
 
 	IEnumerator Timer()
 	{
-		yield return new WaitForSeconds(0.5f);
-		candy += 1;
+		yield return new WaitForSeconds(2.5f);
+		candy += 5;
 
 		StartCoroutine(Timer());
 

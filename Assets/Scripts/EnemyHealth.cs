@@ -11,7 +11,8 @@ public class EnemyHealth : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
-
+		int healthCounterBalance = (int)(WaveSpawner.waves * 1);
+		healthCounter += healthCounterBalance;
 		if (animator) {
 			animator.SetBool("Walk", walk);
 		}

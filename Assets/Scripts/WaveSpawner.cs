@@ -38,6 +38,8 @@ public class WaveSpawner : MonoBehaviour {
 	///////starting a wave
 	void startWaves(){
 		waves ++;
+		int timeToCandy = (int)(timeBetweenWaves * 2);
+		Candy.candy += 50 + timeToCandy;
 		//increasing enemys per wave on long term
 		if(waves == 30){numberOfEnemysPerWave += 1;}
 		else if(waves == 40){numberOfEnemysPerWave += 1;}
@@ -47,11 +49,11 @@ public class WaveSpawner : MonoBehaviour {
 		//increasing the evolving number over the amount of waves
 		if(waves >= 5)
 		{
-			if(waves == 5)
+			if(waves == 5 ||waves == 10 ||waves == 15 ||waves == 20 ||waves == 25 ||waves == 30  ||waves == 35 ||waves == 40)
 			{
-				evolvingNumber += 1;// balance for after 25 rounds getting heavyEnemy's
+				evolvingNumber += 1;
 			}
-			evolvingNumber += 0.4f;// 75 rounds to fully getting heavyEnemy's
+			evolvingNumber += 0.4f;
 		}
 		setTimeBetweenSpawn();
 		StartCoroutine(spawnWave());
