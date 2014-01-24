@@ -76,7 +76,7 @@ public class WaveSpawner : MonoBehaviour {
 		{
 			decreasedSpawnTime = (((waves / 2) + (waves/(waves/waves)))/100);
 		}
-		timeBetweenSpawningEnemy = 1.2f - decreasedSpawnTime;
+		timeBetweenSpawningEnemy = 1.5f - decreasedSpawnTime;
 	}
 	
 	void spawnEnemy(){
