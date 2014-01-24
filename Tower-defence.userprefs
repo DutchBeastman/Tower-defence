@@ -1,13 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GuiScripts\Lifes.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShootingTower.cs">
     <Files>
       <File FileName="Assets\Scripts\GuiScripts\WaveTekst.cs" Line="31" Column="35" />
-      <File FileName="Assets\Scripts\EnemyHealth.cs" Line="10" Column="15" />
-      <File FileName="Assets\Scripts\ShootingTower.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WaveSpawner.cs" Line="215" Column="2" />
+      <File FileName="Assets\Scripts\EnemyHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ShootingTower.cs" Line="16" Column="41" />
+      <File FileName="Assets\Scripts\WaveSpawner.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Upgrade.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GuiScripts\NextWaveButton.cs" Line="23" Column="1" />
+      <File FileName="Assets\Scripts\GuiScripts\NextWaveButton.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GuiScripts\Lifes.cs" Line="40" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

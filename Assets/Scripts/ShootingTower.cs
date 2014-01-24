@@ -57,6 +57,7 @@ public class ShootingTower : MonoBehaviour {
 			}
 			if(rotating == true)
 			{
+				animator1.SetBool("Shoot", true);
 				tijd -= Time.deltaTime;
 				transform.LookAt(target.transform.position);
 				if(tijd <= 0)
@@ -81,11 +82,14 @@ public class ShootingTower : MonoBehaviour {
 
 		yield return new WaitForSeconds(shootingSpeed);
 		animator1.SetBool("Shoot", false);
+
 		Debug.Log("schiet nu");
 		if(target){
 			animator1.SetBool("Shoot", true);
 			target.GetComponent<EnemyHealth>().TakeDamage(towerDamage);
 			//Debug.Log("I'm Shooting a" + towerDamage);
+
+		
 
 		}
 
