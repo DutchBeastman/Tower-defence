@@ -8,12 +8,12 @@ public class ShootingTower : MonoBehaviour {
 	private Vector3 PositionTarget;
 	private Vector3 RotatingToZero;
 	private Vector3 bulletPos;
-	public Transform muzzle;
-	public float tijd;
-	public List<GameObject> enemiesInRange = new List<GameObject>(); 
 	private int EnemieCounter; 
 	private bool rotating = false;
 
+	public Transform muzzle;
+	public float tijd;
+	public List<GameObject> enemiesInRange = new List<GameObject>(); 
 
 
 	void Start(){
@@ -30,8 +30,6 @@ public class ShootingTower : MonoBehaviour {
 			transform.LookAt(target.transform.position);
 			if(tijd <= 0)
 			{
-
-
 				GameObject newBullet = Instantiate(Resources.Load("Prefabs/Rocket"),transform.position , Quaternion.identity) as GameObject;
 				newBullet.name = "Bullet";
 
@@ -41,8 +39,6 @@ public class ShootingTower : MonoBehaviour {
 				float bSp = 150;
 				newBullet.rigidbody.AddRelativeForce(newXPos*bSp, newYPos*bSp, newZPos*bSp);
 				tijd = 0.5f;
-
-
 			}
 		}
 
@@ -58,12 +54,8 @@ public class ShootingTower : MonoBehaviour {
 
 		}
 	}
-	void OnCollisionEnter(Collision col){
-		Debug.Log("Swagg");
-	}
 	void OnTriggerEnter(Collider col)
 	{	
-		Debug.Log("hasjkl;sjf");
 		rotating = false;
 		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32"){
 
@@ -78,16 +70,13 @@ public class ShootingTower : MonoBehaviour {
 
 		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32")
 		{
-			//transform.rotation = Quaternion.LookRotation(RotatingToZero);
 			rotating = false;
 
-			//transform.LookAt(RotatingToZero);
 			if(enemiesInRange.Contains(col.gameObject))
 			{
 				enemiesInRange.Remove(col.gameObject);
 			}
 		}
-
 	}
 
 	void Update(){
@@ -95,7 +84,5 @@ public class ShootingTower : MonoBehaviour {
 		{
 			Application.LoadLevel("Dead");
 		}
-
-
 	}
 }

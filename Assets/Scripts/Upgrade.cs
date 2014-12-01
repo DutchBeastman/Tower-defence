@@ -2,24 +2,21 @@
 using System.Collections;
 
 public class Upgrade : MonoBehaviour {
-	//privates
 
-	private bool Upgrade1 = false;
-	private Vector3 guiPosition;
-	//private Rect windowRect = new Rect(20, 20, 300, 50);//300
 	private bool doWindow0 = false;
 	private bool doWindow1 = false;
-	private int RI = 0;//Rotating It
-	private Rect windowRect0 ;
-	private Rect windowRect1 ;
+	private bool Upgrade1 = false;
 	private float posX = 0f;
 	private float posZ = 0f;
-	private Vector3 rotationTurret;
-	private int offsetPos = 20;
 	private float TurretRotation;
-	private Vector3 PositionsOfTurrets;
+	private int offsetPos = 20;
+	private int rotatingPosition  = 0;
+	private Rect windowRect0 ;
+	private Rect windowRect1 ;
 	private string UpgradeWindow = "Build Turret";
-
+	private Vector3 guiPosition;
+	private Vector3 PositionsOfTurrets;
+	private Vector3 rotationTurret;
 
 
 	//Start making Buttons
@@ -37,7 +34,6 @@ public class Upgrade : MonoBehaviour {
 		}
 	}
 
-
 	void OnMouseDown(){
 
 		doWindow0 = true;
@@ -45,27 +41,26 @@ public class Upgrade : MonoBehaviour {
 		if(gameObject.name == "side1")
 		{
 			posZ = posZ - offsetPos;
-			RI = 2;//Rotating It
+			rotatingPosition = 2;
 		}
 		if(gameObject.name == "side2")
 		{
 			posZ = posZ + offsetPos;
-			RI = 0;//Rotating It
+			rotatingPosition = 0;
 		}
 		if(gameObject.name == "side3")
 		{
 			posX = posX - offsetPos;
-			RI = 1;//Rotating It
+			rotatingPosition = 1;
 		}
 		if(gameObject.name == "side4")
 		{
 			posX = posX + offsetPos;
-			RI = 3;//Rotating It
+			rotatingPosition = 3;
 		}
 
 	}
 	void OnGUI() {
-		//GUI.Window(0, new Rect(guiPosition.x - 100,  Screen.height - guiPosition.y - 150, 200, 60), DoWindow0, "Basic Window");//200
 		if(doWindow0){
 			GUI.Window(0, new Rect(guiPosition.x - 100,  Screen.height - -guiPosition.y - 150, 200, 60), DoWindow0, "Building Upgrade window");//200
 				GUI.color = Color.red;
@@ -76,22 +71,18 @@ public class Upgrade : MonoBehaviour {
 				GUI.color = Color.green;
 				windowRect1 = GUI.Window(1, windowRect1, DoWindow1, "Green Window");
 		}
-		}
+	}
 	void DoWindow0(int windowID) {
 		if (GUI.Button(new Rect(10, 20, 120, 23), UpgradeWindow)){
 			if(!Upgrade1){
 				GameObject newTurret = Instantiate(Resources.Load("Prefabs/Cannon"), PositionsOfTurrets, Quaternion.identity) as GameObject;
 				newTurret.name = "Turret";
-				int NRI = RI * 90;// New Rotating It // Rotating Int
-				newTurret.transform.Rotate(0,NRI,0);
+				int newrotatingPosition = rotatingPosition * 90;// New Rotating It // Rotating Int
+				newTurret.transform.Rotate(0,newrotatingPosition ,0);
 				UpgradeWindow = "Damage Upgrade";
 			}
-			if(Upgrade1)
-			{
-				
-			}
-				Upgrade1 = true;
-				doWindow0 = false;
+			Upgrade1 = true;
+			doWindow0 = false;
 		}
 	}
 	void DoWindow1(int windowID) {
@@ -100,5 +91,5 @@ public class Upgrade : MonoBehaviour {
 			print("Shiny colors: " + GUI.color);
 		}
 	}
-	}
+}
 

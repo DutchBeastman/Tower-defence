@@ -12,6 +12,7 @@ public class StartButtonScript : MonoBehaviour {
 	}
 	void OnMouseDown(){
 		Application.LoadLevel("LVL1");
+		Debug.Log(Application.loadedLevel);
 
 	}
 }
